@@ -1,0 +1,47 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+html {
+	scroll-behavior: smooth;
+}
+body {
+	font-family: 'Lato', sans-serif;
+}
+$primaryColor: #ffbbec;
+:root {
+	--cardfont: var(--fontsize2);
+	--footerfont: var(--fontsize2);
+	--fontsize1: 15.5px;
+	--fontsize2: 18px;
+	--fontsize3: 25px;
+	--fontsize4: 35px;
+	--fontsize5: 64px;
+	--fontsize6: 71px;
+    --radiant: 797px;
+}
+$fs1: var(--fontsize1);
+$fs2: var(--fontsize2);
+$fs3: var(--fontsize3);
+$fs4: var(--fontsize4);
+$fs5: var(--fontsize5);
+$fs6: var(--fontsize6);
+$transitionTime: 0.7s ease-in-out;
+$colorbarH: 5px;
+
+$titleColor1: #ff72b9;
+$titleColor2: #fff;
+$paragraphColor1: #fff;
+$paragraphColor: #707070;
+$circleColor: #ffefad;
+
+$cardColor1: #afc8fe;
+$cardColor2: #18d0e9;
+$cardColor3: #ffc730;
+$cardColor4: #fda57a;
+$cardColors: ($cardColor1, $cardColor2, $cardColor3, $cardColor4);
+
+$h-white: 7.83vh;
+$radiant: var(--radiant);
+$screens: (1366px: 1014px, 1024px:789px, 799px:342px, 352px:352px - 37 *2);

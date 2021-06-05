@@ -1,0 +1,29 @@
+footer {
+	@extend %parent;
+	font-size: var(--footerfont);
+	font-weight: 800;
+	.container {
+		@extend %flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 50px + $colorbarH;
+		color: $primaryColor;
+	}
+	h5 {
+		font: normal normal 800 var(--footerfont)/19px Montserrat;
+	}
+	a {
+		color: $primaryColor;
+		margin-left: 15px;
+		font: normal normal 800 var(--footerfont)/13px Montserrat;
+	}
+	&::after {
+		content: "";
+		width: 100%;
+		height: $colorbarH;
+		position: absolute;
+		bottom: 0;
+		@extend %mygradient0;
+		
+	}
+}

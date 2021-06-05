@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEAM 7</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="css/normalize.css"> -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="menu">
+        <input class="menu-icon" type="checkbox" id="menu-icon" name="menu-icon"/>
+        <label for="menu-icon"></label>
+        <nav class="nav"> 		
+            <ul class="pt-5">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#learnmore">Learn more</a></li>
+                <li><a href="#aboutUs">About us</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    <!-- <div style="height: 100vh;width: 100%;background-color: rgb(43, 35, 35);"> -->
+    </div>
+    <header id="header" onmouseover="setPage(0)">
+        <div class="container">
+            <div id="course" class="course">
+                <div id="box" class="box">
+                    <div class="title">
+                        <h1>LPDWI</h1>
+                        <h2>Sass Course</h2>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi aspernatur vero nemo mollitia. Eaque, ratione et. Enim, sit laborum facilis eos excepturi voluptatibus ullam sed quas debitis omnis eveniet ut Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi aspernatur vero nemo mollitia. Eaque, ratione et. Enim, sit laborum facilis eos excepturi voluptatibus ullam sed quas debitis omnis eveniet ut. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi aspernatur vero nemo mollitia. Eaque, ratione et. Enim, sit laborum facilis eos excepturi voluptatibus ullam sed quas debitis omnis</p>
+                    <a href="#learnmore">Learn more</a>
+                    <div class="break"></div>
+                </div>
+                <div id="headerImg" class="img">
+                    <img src="/images/img1.png" alt="succeded man holds a laptop">
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="whitespace"></div>
+    <div id="learnmore" onmouseover="setPage(1)" class="content2">
+        <div class="container flex">
+            <div class="image"></div>
+            <div class="right">
+                <div>
+                    <div class="title">
+                        <h3>What is sass?</h3>
+                    </div>
+                    <div>
+                        <p>
+                            Sass stands for Syntactically Awesome Stylesheet
+                            Sass is an extension to CSS
+                            Sass is a CSS pre-processor
+                            Sass is completely compatible with all versions of CSS
+                            Sass reduces repetition of CSS and therefore saves time
+                        </p>
+                        <span></span>
+                    </div>
+                </div>
+                <div>
+                    <div class="title">
+                        <h3>Why use sass?</h3>
+                    </div>
+                    <div>
+                        <p>
+                            Stylesheets are getting larger, more complex, and harder to maintain. This is where a CSS pre-processor can help.
+                            Sass lets you use features that do not exist in CSS, like variables, nested rules, mixins, imports, inheritance, built-in functions, and other stuff.
+                        </p>
+                        <span></span>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+    <div class="whitespace"></div>
+    <div id="aboutUs" onmouseover="setPage(2)" class="aboutUs">
+        <div class="container">
+            <div class="title">
+                <h3>About us</h3>
+            </div>
+            <div class="flex">
+                <div class="card">
+                    <img src="/images/profiles/per1.jpg" alt="IDJA Mohamed Ouanis">
+                    <div>
+                        <h3>IDJA Mohamed Ouanis</h3>
+                        <h4>Design</h4>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="/images/profiles/per2.jpg" alt="KADOUN Ishaq">
+                    <div>
+                        <h3>KADOUN Ishaq</h3>
+                        <h4>Script</h4>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="/images/profiles/per3.jpg" alt="LOUNES Abdelaziz">
+                    <div>
+                        <h3>LOUNES Abdelaziz</h3>
+                        <h4>Animation</h4>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="/images/profiles/per4.jpg" alt="NOURINE Abdelmalek">
+                    <div>
+                        <h3>NOURINE Abdelmalek</h3>
+                        <h4>Script</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer id="footer" onmouseover="setPage(3)">
+        <div class="container">
+            <h5>&copy; Boumerdes university 2021 | All rights reserved</h5>
+            <div class="flex">
+                <a href="#AboutUs">About us</a><a href="#Download">Download</a>
+            </div>
+        </div>
+    </footer>
+    <script src="/js/main.js"></script>
+</body>
+</html>

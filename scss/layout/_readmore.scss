@@ -1,0 +1,54 @@
+.content2 {
+	overflow: hidden;
+	border: 3px solid $paragraphColor;
+	height: 799px;
+	border-left: none;
+	border-right: none;
+	position: relative;
+	@media (max-width: 799px) {
+		border: none;
+		max-height: 500px;
+		.image{
+			display: none;
+		}
+	}
+	.container {
+		margin: auto;
+		@extend %center;
+	}
+	.right {
+		width: 788px;
+		margin-left: 48px;
+		@media (max-width: 799px) {margin-left: 0;}
+	}
+	.image {
+		@include weth(530px, 600px);
+		position: relative;
+		left: 0;
+		background: transparent url("../images/img2.jpg") no-repeat padding-box;
+		background-size: cover;
+		&::before {
+			content: "";
+			position: absolute;
+			background-color: $primaryColor;
+			@include weth(1500px,799px);
+			right: 38.7%;
+			@extend %center-y;
+			z-index: -1;
+		}
+	}
+	.title::after {
+		width: 100%;
+	}
+	p {
+		font-size: $fs2;
+		width: 327px;
+		color: $paragraphColor;
+		text-align: justify;
+		margin: 39px 22px 38px 0;
+		@media (max-width: 799px) {
+			width: 100%;
+			margin: 39px 0;
+		}
+	}
+}

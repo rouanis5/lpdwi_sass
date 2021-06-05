@@ -1,0 +1,84 @@
+.aboutUs {
+	position: relative;
+	width: 100%;
+	@include weth(100%,540px);
+	@media (max-width: 1024px) {
+		height: 408px;
+	}
+	@media (max-width: 799px) {
+		height: 781px;
+	}
+	@media (max-width: 352px) {
+		height: 1331px;
+	}
+	@include myGradient(0deg,50%);
+	.title {
+		color: $titleColor2 !important;
+		padding-top: 42px;
+		margin-bottom: 46px;
+		&::after {
+			background-color: $titleColor2 !important;
+			border-color: $titleColor2 !important;
+			width: 563px;
+		}
+	}
+	.flex {
+		justify-content: space-between;
+		@media (max-width: 799px) {
+			flex-wrap: wrap;
+			& >*{
+				flex: 1 1 50%;
+			}
+		}
+		@media (max-width: 352px) {
+			flex-direction: column;
+			align-items: center;
+			& >*{flex-basis:unset}
+		}
+	}
+}
+.card {
+	transition: $transitionTime;
+	background: #ffffff;
+	overflow: hidden;
+	border: 6px solid;
+	border-radius: 49px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	box-shadow: 0px 3px 6px #00000029;
+	@include weth(260px,349px);
+	@media (max-width: 1024px){
+		@include weth(196px,263px);
+	}
+	@media (max-width: 352px) {
+		margin-top: 31px;
+		&:nth-child(1){
+			margin-top: 0;
+		}
+	}
+	@for $i from 1 through length($cardColors) {
+		&:nth-of-type(#{$i}) {
+			border-color: nth($cardColors, $i);
+			color: nth($cardColors, $i);
+		}
+		img:th-child(#{$i}) {
+			border-color: nth($cardColors, $i);
+		}
+	}
+	img {
+		@extend %circle;
+		width: 118px;
+		height: 120px;
+		border: 14px solid;
+		@media (max-width: 799px){
+			border: 10px solid;
+		}
+	}
+	div {
+		@include cardTitle(h3, 33px, 800, $fs2, 22px);
+		@include cardTitle(h4, 2px, 400, $fs1, 19px);
+	}
+}

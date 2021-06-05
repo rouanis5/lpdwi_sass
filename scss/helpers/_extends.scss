@@ -1,0 +1,100 @@
+.container {
+    width: 530px+48+563;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+.title {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 800;
+	transition: $transitionTime;
+	color: $titleColor1;
+	text-transform: uppercase;
+	margin-bottom: 12px;
+    @media (max-width: 799px) {
+        text-align: center;
+    }
+    h1 {font-size: $fs6;}
+    h2 {font-size: $fs5;}
+    h3 {font-size: $fs4;}
+    position: relative;
+    &::after {
+		transition: $transitionTime;
+        background-color: $titleColor1 !important;
+        content: "";
+        position: absolute;
+        border: 3px solid $titleColor1;
+        position: absolute;
+        left: 0;
+        @media (max-width: 799px) {
+            width: 100% !important;
+        }
+    }
+}
+.whitespace {
+	position: relative;
+	@include weth(100%, $h-white);
+	max-height: 62px;
+	background-color: white;
+	@media (max-height: 900px){
+		max-height: $h-white;
+	}
+}
+a {
+	text-decoration: none;
+}
+%mygradient0{
+	@include myGradient(109deg,0%)
+}
+%flex,
+.flex {
+	display: flex;
+}
+%parent,
+.parent {
+	position: relative;
+	width: 100%;
+}
+%circle {
+	border-radius: 50%;
+}
+%center-y,
+.centerY {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+%center {
+	position: absolute !important;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+@each $screen,$width in $screens {
+	@include mq-container(#{$screen},#{$width});
+}
+@media (max-width: 1024px) {
+	:root {
+		--cardfont: 13px;
+		--fontsize1: 14px;
+		--fontsize2: 16px;
+		--fontsize3: 18px;
+		--fontsize4: 26px;
+		--fontsize5: 48px;
+		--fontsize6: 53px;
+	}
+}
+@media (max-width: 799px) {
+	:root {
+		--footerfont: 11px;
+		--fontsize5: 46px;
+		--fontsize6: 57px;
+	}
+}
+@media (max-width: 352px) {
+	:root {
+		--footerfont: 10px;
+		--fontsize5: 35px;
+		--fontsize6: 47px;
+	}
+}

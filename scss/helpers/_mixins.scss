@@ -1,0 +1,19 @@
+@mixin myGradient($angle,$opacity){
+	background: transparent linear-gradient($angle, #a9c9ff $opacity , #ffbbec 100%) 0% 0% no-repeat padding-box;
+}
+@mixin weth($width,$height) {
+	width: $width;
+	height: $height;
+}
+@mixin mq-container($mxWidMQ,$mxWidCont) {
+	@media screen and (max-width: #{$mxWidMQ}) {
+		.container {max-width: #{$mxWidCont};
+		}
+	}
+}
+@mixin cardTitle($tag,$margintop,$weight, $size, $lineheight) {
+    #{$tag} {
+        margin-top: $margintop;
+        font: normal $weight var(--cardfont)/$lineheight Montserrat;
+    }
+}

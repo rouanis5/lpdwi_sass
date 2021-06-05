@@ -1,0 +1,127 @@
+
+header {
+	@extend %mygradient0;
+	position: relative;
+	overflow: hidden;
+	height: clamp(545px,calc(100vh - #{$h-white}),730px);
+	@media (max-width: 799px){
+		min-height: 750px;
+        height: 98vh;
+		max-height: 900px;
+	}
+	.container {
+		@extend %center;
+		z-index: 3;
+	}
+	.course {
+        @extend %flex;
+		justify-content: space-around;
+		align-items: center;
+		width: 100%;
+		z-index: 3;
+		@media (max-width: 799px) {
+            flex-direction: column;
+		}
+	}
+	.box {
+        @extend %flex;
+		flex-direction: column;
+		@media (max-width: 799px) {
+            align-items: center;
+		}
+	}
+	.title {
+		color: $titleColor2 !important;
+		&::after {
+            background-color: $titleColor2 !important;
+			border-color: $titleColor2 !important;
+			width: 563px;
+			@media (max-width: 1024px) {
+                width: 425px;
+			}
+			@media (max-width: 799px) {
+                box-shadow: 0px 3px 6px #00000029;
+			}
+		}
+		@media (max-width: 799px) {
+            margin-bottom: 63px;
+		}
+        h1,h2{
+            transition: $transitionTime;
+            @media (max-width: 799px) {
+                text-shadow: 0px 3px 6px #00000029;
+            }
+        }
+	}
+	p {
+        width: 493px;
+		font-size: $fs1;
+		line-height: 19px;
+		color: $paragraphColor1;
+		margin-top: 31px;
+		margin-bottom: 24px;
+		text-align: justify;
+		overflow: hidden;
+		text-overflow: ellipsis; 
+		@media (max-width: 1024px) {
+            width: 372px;
+		}
+		@media (max-width: 799px) {
+            @include weth(100%,92px);
+			order: 1;
+		}
+	}
+    .img {
+        &,img{@include weth(323px,501px);transition: $transitionTime;}
+        position: relative;
+        &:after{
+            transition: $transitionTime;
+            content: "";
+            @extend %circle;
+            @extend .centerY;
+            left: 30px;
+            z-index: -1;
+            @include weth($radiant,$radiant);
+            background-color: $circleColor;
+        }
+        @media (max-width: 1024px) {
+            &,img{@include weth(244px,378px);}
+            &:after{
+                --radiant: 602px;
+            }
+        }
+        @media (max-width: 799px) {
+            &,img{@include weth(232px,359px);}
+            &:after{
+                left: 50% !important;
+                transform: translate(-50%,-50%) !important;
+                --radiant: 386px;
+            }
+        }
+        @media (max-width: 352px) {
+            &,img{@include weth(231px,358px)};
+            &:after{
+                --radiant: 307px;
+            }
+        }
+        
+    }
+	a {
+        text-decoration: none;
+		color: white;
+		padding: 4px 43px 9px 19px;
+		max-width: 189px;
+		font-size: $fs3;
+		background-color: $titleColor1;
+		border-radius: 34px;
+		@media (max-width: 1024px) {
+            max-width: 143px;
+			padding: 3px 37px 7px 15px;
+		}
+		@media (max-width: 799px) {
+            padding: 5px 35px 9px 33px;
+			max-width: 170px;
+			order:2;
+		}
+	}
+}
