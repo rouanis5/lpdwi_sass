@@ -1,7 +1,7 @@
 * {
 	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
+	margin: 0 ;
+	padding: 0 ;
 }
 html {
 	scroll-behavior: smooth;
@@ -44,4 +44,10 @@ $cardColors: ($cardColor1, $cardColor2, $cardColor3, $cardColor4);
 
 $h-white: 7.83vh;
 $radiant: var(--radiant);
-$screens: (1366px: 1014px, 1024px:789px, 799px:342px, 352px:352px - 37 *2);
+$xl: 1366px;
+$lg: 1024px;
+$md: 799px;
+// $sm: 352px;
+$sm: 576px;
+// $screens: ($xl: 1014px, $lg:789px, $md:342px, $sm:352px - 37 *2);
+$screens: ($xl: 1014px, $lg:789px, $md:480px, $sm:352px);

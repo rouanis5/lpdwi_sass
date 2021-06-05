@@ -94,6 +94,7 @@ header .title::after {
 }
 
 header .title h1, header .title h2 {
+  margin: 0;
   transition: 0.7s ease-in-out;
 }
 
@@ -171,7 +172,7 @@ header .img:after {
   }
 }
 
-@media (max-width: 352px) {
+@media (max-width: 576px) {
   header .img, header .img img {
     width: 231px;
     height: 358px;
@@ -209,7 +210,7 @@ header a {
 .content2 {
   overflow: hidden;
   border: 3px solid #707070;
-  height: 799px;
+  height: clamp(730px, 100vh, 900px);
   border-left: none;
   border-right: none;
   position: relative;
@@ -231,12 +232,12 @@ header a {
 
 .content2 .right {
   width: 788px;
-  margin-left: 48px;
+  margin: auto 48px;
 }
 
 @media (max-width: 799px) {
   .content2 .right {
-    margin-left: 0;
+    margin: 0;
   }
 }
 
@@ -264,8 +265,9 @@ header a {
 }
 
 .content2 p {
-  font-size: var(--fontsize2);
   width: 327px;
+  font-size: var(--fontsize2);
+  line-height: 23px;
   color: #707070;
   text-align: justify;
   margin: 39px 22px 38px 0;
@@ -298,7 +300,7 @@ header a {
   }
 }
 
-@media (max-width: 352px) {
+@media (max-width: 576px) {
   .aboutUs {
     height: 1331px;
   }
@@ -322,20 +324,23 @@ header a {
 
 @media (max-width: 799px) {
   .aboutUs .flex {
+    justify-content: space-around;
     flex-wrap: wrap;
   }
   .aboutUs .flex > * {
-    flex: 1 1 50%;
+    flex-basis: 196px;
+    margin-bottom: 26px;
   }
 }
 
-@media (max-width: 352px) {
+@media (max-width: 576px) {
   .aboutUs .flex {
     flex-direction: column;
     align-items: center;
   }
   .aboutUs .flex > * {
     flex-basis: unset;
+    margin-bottom: unset;
   }
 }
 
@@ -362,7 +367,7 @@ header a {
   }
 }
 
-@media (max-width: 352px) {
+@media (max-width: 576px) {
   .card {
     margin-top: 31px;
   }
@@ -780,7 +785,7 @@ footer::after {
   background-color: white;
 }
 
-@media (max-height: 900px) {
+@media (max-height: 799px) {
   .whitespace {
     max-height: 7.83vh;
   }
@@ -838,13 +843,19 @@ header .container, .content2 .container {
 
 @media screen and (max-width: 799px) {
   .container {
-    max-width: 342px;
+    max-width: 480px;
   }
 }
 
-@media screen and (max-width: 352px) {
+@media screen and (max-width: 576px) {
   .container {
-    max-width: 278px;
+    max-width: 352px;
+  }
+}
+
+@media (max-width: 362px) {
+  .container {
+    width: 90%;
   }
 }
 
@@ -868,7 +879,7 @@ header .container, .content2 .container {
   }
 }
 
-@media (max-width: 352px) {
+@media (max-width: 576px) {
   :root {
     --footerfont: 10px;
     --fontsize5: 35px;

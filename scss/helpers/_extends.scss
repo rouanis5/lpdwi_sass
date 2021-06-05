@@ -11,7 +11,7 @@
 	color: $titleColor1;
 	text-transform: uppercase;
 	margin-bottom: 12px;
-    @media (max-width: 799px) {
+    @media (max-width: $md) {
         text-align: center;
     }
     h1 {font-size: $fs6;}
@@ -26,7 +26,7 @@
         border: 3px solid $titleColor1;
         position: absolute;
         left: 0;
-        @media (max-width: 799px) {
+        @media (max-width: $md) {
             width: 100% !important;
         }
     }
@@ -36,7 +36,7 @@
 	@include weth(100%, $h-white);
 	max-height: 62px;
 	background-color: white;
-	@media (max-height: 900px){
+	@media (max-height: $md){
 		max-height: $h-white;
 	}
 }
@@ -72,8 +72,14 @@ a {
 }
 @each $screen,$width in $screens {
 	@include mq-container(#{$screen},#{$width});
+	@if ($screen == $sm) {
+		@media (max-width: $width + 10){
+			.container{width: 90%;}
+		}
+	}
 }
-@media (max-width: 1024px) {
+
+@media (max-width: $lg) {
 	:root {
 		--cardfont: 13px;
 		--fontsize1: 14px;
@@ -84,14 +90,14 @@ a {
 		--fontsize6: 53px;
 	}
 }
-@media (max-width: 799px) {
+@media (max-width: $md) {
 	:root {
 		--footerfont: 11px;
 		--fontsize5: 46px;
 		--fontsize6: 57px;
 	}
 }
-@media (max-width: 352px) {
+@media (max-width: $sm) {
 	:root {
 		--footerfont: 10px;
 		--fontsize5: 35px;

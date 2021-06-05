@@ -2,13 +2,13 @@
 	position: relative;
 	width: 100%;
 	@include weth(100%,540px);
-	@media (max-width: 1024px) {
+	@media (max-width: $lg) {
 		height: 408px;
 	}
-	@media (max-width: 799px) {
+	@media (max-width: $md) {
 		height: 781px;
 	}
-	@media (max-width: 352px) {
+	@media (max-width: $sm) {
 		height: 1331px;
 	}
 	@include myGradient(0deg,50%);
@@ -24,16 +24,21 @@
 	}
 	.flex {
 		justify-content: space-between;
-		@media (max-width: 799px) {
+		@media (max-width: $md) {
+			justify-content: space-around;
 			flex-wrap: wrap;
 			& >*{
-				flex: 1 1 50%;
+				flex-basis: 196px;
+				margin-bottom: 26px;
 			}
 		}
-		@media (max-width: 352px) {
+		@media (max-width: $sm) {
 			flex-direction: column;
 			align-items: center;
-			& >*{flex-basis:unset}
+			& >*{
+				flex-basis:unset;
+				margin-bottom: unset;
+			}
 		}
 	}
 }
@@ -50,10 +55,10 @@
 	text-align: center;
 	box-shadow: 0px 3px 6px #00000029;
 	@include weth(260px,349px);
-	@media (max-width: 1024px){
+	@media (max-width: $lg){
 		@include weth(196px,263px);
 	}
-	@media (max-width: 352px) {
+	@media (max-width: $sm) {
 		margin-top: 31px;
 		&:nth-child(1){
 			margin-top: 0;
@@ -73,7 +78,7 @@
 		width: 118px;
 		height: 120px;
 		border: 14px solid;
-		@media (max-width: 799px){
+		@media (max-width: $md){
 			border: 10px solid;
 		}
 	}

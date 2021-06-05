@@ -4,7 +4,7 @@ header {
 	position: relative;
 	overflow: hidden;
 	height: clamp(545px,calc(100vh - #{$h-white}),730px);
-	@media (max-width: 799px){
+	@media (max-width: $md){
 		min-height: 750px;
         height: 98vh;
 		max-height: 900px;
@@ -19,14 +19,14 @@ header {
 		align-items: center;
 		width: 100%;
 		z-index: 3;
-		@media (max-width: 799px) {
+		@media (max-width: $md) {
             flex-direction: column;
 		}
 	}
 	.box {
         @extend %flex;
 		flex-direction: column;
-		@media (max-width: 799px) {
+		@media (max-width: $md) {
             align-items: center;
 		}
 	}
@@ -36,19 +36,20 @@ header {
             background-color: $titleColor2 !important;
 			border-color: $titleColor2 !important;
 			width: 563px;
-			@media (max-width: 1024px) {
+			@media (max-width: $lg) {
                 width: 425px;
 			}
-			@media (max-width: 799px) {
+			@media (max-width: $md) {
                 box-shadow: 0px 3px 6px #00000029;
 			}
 		}
-		@media (max-width: 799px) {
+		@media (max-width: $md) {
             margin-bottom: 63px;
 		}
         h1,h2{
+			margin: 0;
             transition: $transitionTime;
-            @media (max-width: 799px) {
+            @media (max-width: $md) {
                 text-shadow: 0px 3px 6px #00000029;
             }
         }
@@ -63,10 +64,10 @@ header {
 		text-align: justify;
 		overflow: hidden;
 		text-overflow: ellipsis; 
-		@media (max-width: 1024px) {
+		@media (max-width: $lg) {
             width: 372px;
 		}
-		@media (max-width: 799px) {
+		@media (max-width: $md) {
             @include weth(100%,92px);
 			order: 1;
 		}
@@ -84,13 +85,13 @@ header {
             @include weth($radiant,$radiant);
             background-color: $circleColor;
         }
-        @media (max-width: 1024px) {
+        @media (max-width: $lg) {
             &,img{@include weth(244px,378px);}
             &:after{
                 --radiant: 602px;
             }
         }
-        @media (max-width: 799px) {
+        @media (max-width: $md) {
             &,img{@include weth(232px,359px);}
             &:after{
                 left: 50% !important;
@@ -98,7 +99,7 @@ header {
                 --radiant: 386px;
             }
         }
-        @media (max-width: 352px) {
+        @media (max-width: $sm) {
             &,img{@include weth(231px,358px)};
             &:after{
                 --radiant: 307px;
@@ -114,11 +115,11 @@ header {
 		font-size: $fs3;
 		background-color: $titleColor1;
 		border-radius: 34px;
-		@media (max-width: 1024px) {
+		@media (max-width: $lg) {
             max-width: 143px;
 			padding: 3px 37px 7px 15px;
 		}
-		@media (max-width: 799px) {
+		@media (max-width: $md) {
             padding: 5px 35px 9px 33px;
 			max-width: 170px;
 			order:2;

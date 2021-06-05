@@ -1,11 +1,11 @@
 .content2 {
 	overflow: hidden;
 	border: 3px solid $paragraphColor;
-	height: 799px;
+	height: clamp(730px,100vh,900px);
 	border-left: none;
 	border-right: none;
 	position: relative;
-	@media (max-width: 799px) {
+	@media (max-width: $md) {
 		border: none;
 		max-height: 500px;
 		.image{
@@ -18,8 +18,8 @@
 	}
 	.right {
 		width: 788px;
-		margin-left: 48px;
-		@media (max-width: 799px) {margin-left: 0;}
+		margin: auto 48px;
+		@media (max-width: $md) {margin: 0;}
 	}
 	.image {
 		@include weth(530px, 600px);
@@ -41,12 +41,13 @@
 		width: 100%;
 	}
 	p {
-		font-size: $fs2;
 		width: 327px;
+		font-size: $fs2;
+		line-height: 23px;
 		color: $paragraphColor;
 		text-align: justify;
 		margin: 39px 22px 38px 0;
-		@media (max-width: 799px) {
+		@media (max-width: $md) {
 			width: 100%;
 			margin: 39px 0;
 		}
