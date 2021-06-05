@@ -40,16 +40,14 @@ window.addEventListener("keydown", function(e) {
 }, false);
 
 function setPage(n) {
-    window.MouseEvent= function(){
-        page = n;
-    }
+    page = n;
 }
 function upDown(n) {
     if (n == 1) {
-        if (page> 0 && page<= pagesId.length - 1) page--;
+        if (page> 0 && page<= (pagesId.length - 1)) page--;
     }
     else{
-        if (page>= 0 && page< pagesId.length - 1) page++;
+        if (page>= 0 && page< (pagesId.length - 1)) page++;
     }
     window.location.href= "#"+pagesId[page];
 }
