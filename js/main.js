@@ -1,15 +1,37 @@
-const headerImg = document.getElementById("headerImg")
-const box = document.getElementById("box")
-const course = document.getElementById("course")
+let headerImg = document.getElementById("headerImg")
+let box = document.getElementById("box")
+let course = document.getElementById("course")
 let tabletWidth = "799px";
 let big;
+let mainTransition = 700;
+let transition1 = mainTransition;
+let urls = document.querySelectorAll(".navigation nav ul li a");
+function menuDisplay() {
+    icon.classList.toggle("change");
+    // setTimeout(function(){menu.classList.toggle("display");}, 700);
+    // menu.classList.toggle("display");
+    setTimeout(
+        function(){
+            if(transition1 === 700){
+                transition1 = 0;
+            }
+            else if(transition1 === 0){
+                transition1 = 700;
+            }
+            menu.classList.toggle("display");
+        }, transition1
+    );
+}
+for (let i = 0; i < urls.length; i++) {
+    urls[i].onclick = function(){
+        menuDisplay();
+    }
+}
 window.onload = function(){
-    if (window.matchMedia("(max-width: "+tabletWidth+")").matches) {
+    if (window.matchMedia("(max-width: "+tabletWidth+")").matches)
         big = false;
-    }
-    else {
+    else
         big = true;
-    }
     MQ_799px();
 }
 let MQ_799px = function () {
@@ -38,7 +60,6 @@ window.addEventListener("keydown", function(e) {
         upDown(2);
     }
 }, false);
-
 function setPage(n) {
     page = n;
 }

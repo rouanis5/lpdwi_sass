@@ -13,18 +13,23 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.min.css">
-    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="menu">
-        <input class="menu-icon" type="checkbox" id="menu-icon" name="menu-icon"/>
-        <label for="menu-icon"></label>
-        <nav class="nav"> 		
-            <ul class="pt-5">
+    <div id="icon" class="icon" onclick="menuDisplay()">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+    <div id="menu" class="navigation">
+        <nav> 		
+            <ul>
                 <li><a href="#header">Home</a></li>
-                <li><a href="#learnmore">Learn more</a></li>
+                <li><a href="#learnmore">What is Sass?</a></li>
                 <li><a href="#aboutUs">About us</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="http://lpdwi.univ-boumerdes.dz/" target="_blank" rel="noopener">LPDWI</a></li>
+                <li><a href="https://github.com/rouanis5/lpdwi_sass/" target="_blank" rel="noopener">GitHub</a></li>
             </ul>
         </nav>
     </div>
@@ -64,7 +69,7 @@
                             Sass is completely compatible with all versions of CSS
                             Sass reduces repetition of CSS and therefore saves time
                         </p>
-                        <span></span>
+                        <!-- <span></span> -->
                     </div>
                 </div>
                 <div>
@@ -72,11 +77,8 @@
                         <h3>Why use sass?</h3>
                     </div>
                     <div>
-                        <p>
-                            Stylesheets are getting larger, more complex, and harder to maintain. This is where a CSS pre-processor can help.
-                            Sass lets you use features that do not exist in CSS, like variables, nested rules, mixins, imports, inheritance, built-in functions, and other stuff.
-                        </p>
-                        <span></span>
+                        <p>Stylesheets are getting larger, more complex, and harder to maintain. This is where a CSS pre-processor can help.Sass lets you use features that do not exist in CSS, like variables, nested rules, mixins, imports, inheritance, built-in functions, and other stuff.</p>
+                        <!-- <span></span> -->
                     </div>
                 </div> 
             </div>
@@ -93,28 +95,28 @@
                     <img src="images/profiles/per1.jpg" alt="IDJA Mohamed Ouanis">
                     <div>
                         <h3>IDJA Mohamed Ouanis</h3>
-                        <h4>Design</h4>
+                        <h4>Development</h4>
                     </div>
                 </div>
                 <div class="card">
                     <img src="images/profiles/per2.jpg" alt="KADOUN Ishaq">
                     <div>
                         <h3>KADOUN Ishaq</h3>
-                        <h4>Script</h4>
+                        <h4>Writing</h4>
                     </div>
                 </div>
                 <div class="card">
                     <img src="images/profiles/per3.jpg" alt="LOUNES Abdelaziz">
                     <div>
                         <h3>LOUNES Abdelaziz</h3>
-                        <h4>Animation</h4>
+                        <h4>Presentation</h4>
                     </div>
                 </div>
                 <div class="card">
                     <img src="images/profiles/per4.jpg" alt="NOURINE Abdelmalek">
                     <div>
                         <h3>NOURINE Abdelmalek</h3>
-                        <h4>Script</h4>
+                        <h4>Writing</h4>
                     </div>
                 </div>
             </div>
@@ -124,7 +126,7 @@
         <div class="container">
             <h5>&copy; Boumerdes university 2021 | All rights reserved</h5>
             <div class="flex">
-                <a href="#AboutUs">About us</a><a href="#Download">Download</a>
+                <a href="http://lpdwi.univ-boumerdes.dz/" target="_blank" rel="noopener">Lpdwi</a><a href="https://github.com/rouanis5/lpdwi_sass/" target="_blank" rel="noopener">GitHub</a>
             </div>
         </div>
     </footer>
