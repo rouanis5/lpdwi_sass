@@ -356,8 +356,63 @@ header a {
   align-items: center;
   text-align: center;
   box-shadow: 0px 3px 6px #00000029;
+  cursor: pointer;
   width: 260px;
   height: 349px;
+}
+
+.card img {
+  width: 118px;
+  height: 120px;
+  border: 14px solid;
+  margin-top: 10px;
+  transition: 0.7s ease-in-out;
+}
+
+@media (max-width: 799px) {
+  .card img {
+    border: 10px solid;
+  }
+}
+
+.card section h3 {
+  margin-top: 33px;
+  font: normal 800 var(--cardfont)/22px Montserrat;
+}
+
+.card section h4 {
+  margin-top: 2px;
+  font: normal 400 var(--cardfont)/19px Montserrat;
+}
+
+.card .rs {
+  transform: translateY(80px);
+  transition: 0.7s ease-in-out;
+  margin-top: 5px;
+}
+
+.card .rs a {
+  color: inherit;
+}
+
+.card .rs i {
+  margin: 0 7px;
+  font-size: 1.25em;
+  transition: 0.7s ease-in-out;
+}
+
+.card .rs i:hover {
+  transform: scale(1.25);
+}
+
+.card:hover {
+  border-color: #fff !important;
+  transform: scale(1.1);
+  z-index: 4;
+}
+
+.card:hover .rs {
+  transform: translateY(0);
 }
 
 @media (max-width: 1024px) {
@@ -410,28 +465,6 @@ header a {
 
 .card img:th-child(4) {
   border-color: #fda57a;
-}
-
-.card img {
-  width: 118px;
-  height: 120px;
-  border: 14px solid;
-}
-
-@media (max-width: 799px) {
-  .card img {
-    border: 10px solid;
-  }
-}
-
-.card div h3 {
-  margin-top: 33px;
-  font: normal 800 var(--cardfont)/22px Montserrat;
-}
-
-.card div h4 {
-  margin-top: 2px;
-  font: normal 400 var(--cardfont)/19px Montserrat;
 }
 
 footer {
@@ -502,6 +535,8 @@ footer::after {
   height: 100vh;
   border-radius: 0;
   transform: translate(55px, -35px);
+  background: rgba(255, 114, 185, 0.7);
+  backdrop-filter: blur(10px);
 }
 
 .icon::before {

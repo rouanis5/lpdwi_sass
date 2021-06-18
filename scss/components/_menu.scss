@@ -25,6 +25,8 @@
 			height: 100vh;
 			border-radius: 0;
 			transform: translate(55px,-35px);
+			background: rgba($titleColor1, 0.7);
+			backdrop-filter: blur(10px);
 		}
 	}
 	&::before{

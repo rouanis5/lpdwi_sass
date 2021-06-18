@@ -54,6 +54,42 @@
 	align-items: center;
 	text-align: center;
 	box-shadow: 0px 3px 6px #00000029;
+	cursor: pointer;
+	img {
+		@extend %circle;
+		width: 118px;
+		height: 120px;
+		border: 14px solid;
+		margin-top: 10px;
+		transition: $transitionTime;
+		@media (max-width: $md){
+			border: 10px solid;
+		}
+	}
+	section {
+		@include cardTitle(h3, 33px, 800, $fs2, 22px);
+		@include cardTitle(h4, 2px, 400, $fs1, 19px);
+	}
+	.rs{
+		transform: translateY(80px);
+		transition: $transitionTime;
+		margin-top: 5px;
+		a{color: inherit}
+		i{
+			margin: 0 7px;
+			font-size: 1.25em;
+			transition: $transitionTime;
+			&:hover{
+				transform: scale(1.25);
+			}
+		}
+	}
+	&:hover{
+		border-color: $cardHover !important;
+		transform: scale(1.1);
+		z-index: 4;
+		.rs{transform: translateY(0)}
+	}
 	@include weth(260px,349px);
 	@media (max-width: $lg){
 		@include weth(196px,263px);
@@ -72,18 +108,5 @@
 		img:th-child(#{$i}) {
 			border-color: nth($cardColors, $i);
 		}
-	}
-	img {
-		@extend %circle;
-		width: 118px;
-		height: 120px;
-		border: 14px solid;
-		@media (max-width: $md){
-			border: 10px solid;
-		}
-	}
-	div {
-		@include cardTitle(h3, 33px, 800, $fs2, 22px);
-		@include cardTitle(h4, 2px, 400, $fs1, 19px);
 	}
 }
