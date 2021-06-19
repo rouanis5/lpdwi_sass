@@ -115,6 +115,8 @@ header {
 		font-size: $fs3;
 		background-color: $titleColor1;
 		border-radius: 34px;
+		transition: 0.3s;
+		&:hover{box-shadow: 0px 0px 0px 3px #ffffff}
 		@media (max-width: $lg) {
             max-width: 143px;
 			padding: 3px 37px 7px 15px;

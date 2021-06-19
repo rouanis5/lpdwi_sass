@@ -190,6 +190,11 @@ header a {
   font-size: var(--fontsize3);
   background-color: #ff72b9;
   border-radius: 34px;
+  transition: 0.3s;
+}
+
+header a:hover {
+  box-shadow: 0px 0px 0px 3px #ffffff;
 }
 
 @media (max-width: 1024px) {
@@ -362,9 +367,10 @@ header a {
 }
 
 .card img {
-  width: 118px;
+  width: 120px;
   height: 120px;
-  border: 14px solid;
+  border: 12px solid;
+  background-size: cover;
   margin-top: 10px;
   transition: 0.7s ease-in-out;
 }
@@ -432,39 +438,69 @@ header a {
 }
 
 .card:nth-of-type(1) {
-  border-color: #afc8fe;
   color: #afc8fe;
 }
 
-.card img:th-child(1) {
+.card:nth-of-type(1) .rs i:hover {
+  color: #6394fd;
+}
+
+.card, .card img:th-child(1) {
   border-color: #afc8fe;
 }
 
 .card:nth-of-type(2) {
-  border-color: #18d0e9;
   color: #18d0e9;
 }
 
-.card img:th-child(2) {
+.card:nth-of-type(2) .rs i:hover {
+  color: #1093a5;
+}
+
+.card, .card img:th-child(2) {
   border-color: #18d0e9;
 }
 
 .card:nth-of-type(3) {
-  border-color: #ffc730;
   color: #ffc730;
 }
 
-.card img:th-child(3) {
+.card:nth-of-type(3) .rs i:hover {
+  color: #e3a500;
+}
+
+.card, .card img:th-child(3) {
   border-color: #ffc730;
 }
 
 .card:nth-of-type(4) {
-  border-color: #fda57a;
   color: #fda57a;
 }
 
-.card img:th-child(4) {
+.card:nth-of-type(4) .rs i:hover {
+  color: #fc722f;
+}
+
+.card, .card img:th-child(4) {
   border-color: #fda57a;
+}
+
+.aboutUs .details {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 4;
+  background: rgba(175, 200, 254, 0.7);
+  backdrop-filter: blur(10px);
+}
+
+.aboutUs .details .title::after {
+  width: 100%;
+}
+
+.aboutUs .details img {
+  height: 100vh;
 }
 
 footer {
@@ -487,6 +523,10 @@ footer a {
   color: #ffbbec;
   margin-left: 15px;
   font: normal normal 800 var(--footerfont)/13px Montserrat;
+}
+
+footer a:hover {
+  text-decoration: underline;
 }
 
 footer::after {
@@ -539,6 +579,11 @@ footer::after {
   backdrop-filter: blur(10px);
 }
 
+.icon.change:hover::before {
+  border: none;
+  box-shadow: none;
+}
+
 .icon::before {
   content: "";
   transition: 0.7s ease-in-out;
@@ -552,6 +597,12 @@ footer::after {
   z-index: -1;
   border-radius: 50%;
   background: rgba(255, 114, 185, 0.9);
+  box-shadow: 0 0 0 #00000000;
+}
+
+.icon:hover::before {
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 1px #00000029;
 }
 
 .navigation {

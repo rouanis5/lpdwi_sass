@@ -28,6 +28,12 @@
 			background: rgba($titleColor1, 0.7);
 			backdrop-filter: blur(10px);
 		}
+		&:hover{
+			&::before{
+			border: none;
+			box-shadow: none
+			}
+		}
 	}
 	&::before{
 		content: "";
@@ -42,7 +48,9 @@
 		z-index: -1;
 		border-radius: 50%;
 		background: rgba($titleColor1, 0.9);
+		box-shadow: 0 0 0 #00000000;
 	}
+	&:hover::before{border: 3px solid #fff;box-shadow: 0 0 0 1px #00000029}
 }
 .navigation{
 	position: fixed;

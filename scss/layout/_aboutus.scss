@@ -57,9 +57,10 @@
 	cursor: pointer;
 	img {
 		@extend %circle;
-		width: 118px;
+		width: 120px;
 		height: 120px;
-		border: 14px solid;
+		border: 12px solid;
+		background-size: cover;
 		margin-top: 10px;
 		transition: $transitionTime;
 		@media (max-width: $md){
@@ -88,7 +89,9 @@
 		border-color: $cardHover !important;
 		transform: scale(1.1);
 		z-index: 4;
-		.rs{transform: translateY(0)}
+		.rs{
+			transform: translateY(0)
+		}
 	}
 	@include weth(260px,349px);
 	@media (max-width: $lg){
@@ -102,11 +105,28 @@
 	}
 	@for $i from 1 through length($cardColors) {
 		&:nth-of-type(#{$i}) {
-			border-color: nth($cardColors, $i);
 			color: nth($cardColors, $i);
+			.rs i:hover{
+				color: darken(nth($cardColors, $i),15%);
+			}
 		}
-		img:th-child(#{$i}) {
+		&,img:th-child(#{$i}) {
 			border-color: nth($cardColors, $i);
 		}
+	}
+}
+.aboutUs .details{
+	position: fixed;
+	inset: 0;
+	width: 100%;
+	height: 100vh;
+	z-index: 4;
+	background: rgba(#afc8fe,0.7);
+	backdrop-filter: blur(10px);
+	.title::after{
+		width: 100%;
+	}
+	img{
+		height: 100vh;
 	}
 }

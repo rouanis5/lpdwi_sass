@@ -16,6 +16,9 @@ footer {
 		color: $primaryColor;
 		margin-left: 15px;
 		font: normal normal 800 var(--footerfont)/13px Montserrat;
+		&:hover{
+			text-decoration: underline;
+		}
 	}
 	&::after {
 		content: "";
