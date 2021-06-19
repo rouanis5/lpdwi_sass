@@ -1,4 +1,4 @@
-let big, tabletWidth = "799px", mainTransition = 700, transition1 = mainTransition;
+let tabletWidth = "799px", mainTransition = 700, transition1 = mainTransition;
 let urls = document.querySelectorAll(".navigation nav ul li a");
 function menuDisplay() {
     icon.classList.toggle("change");
@@ -19,13 +19,7 @@ for (let i = 0; i < urls.length; i++) {
         menuDisplay();
     }
 }
-window.onload = function () {
-    if (window.matchMedia("(max-width: " + tabletWidth + ")").matches)
-        big = false;
-    else
-        big = true;
-    MQ_799px();
-}
+
 let MQ_799px = function () {
     // if screen >= tabletwidth
     if (window.matchMedia("(max-width: " + tabletWidth + ")").matches && !big) {

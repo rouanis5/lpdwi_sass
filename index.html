@@ -24,10 +24,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.min.css">
+    <script src="js/onload.js"></script>
     <title>LPDWI | Sass course</title>
-</head>
+    </head>
 <body>
+    <noscript style="font-size: 20px;color: red;">Javascript must be enabled</noscript>
     <div id="icon" class="icon" onclick="menuDisplay()">
         <div class="bar1"></div>
         <div class="bar2"></div>
@@ -168,9 +170,13 @@
     </div>
     <footer id="footer" onmouseover="setPage(3)">
         <div class="container">
-            <h5>&copy; Boumerdes university 2021 | All rights reserved</h5>
-            <div class="flex">
-                <a href="http://lpdwi.univ-boumerdes.dz/" target="_blank" rel="noopener">Lpdwi</a><a href="https://github.com/rouanis5/lpdwi_sass/" target="_blank" rel="noopener">GitHub</a>
+            <h5>&copy; Boumerdes university 2021</h5>
+            <div>
+                <ul class="flex">
+                    <li class="hide-xs"><a href="http://lpdwi.univ-boumerdes.dz/" target="_blank" rel="noopener">Lpdwi</a></li>
+                    <li><a href="https://github.com/rouanis5/lpdwi_sass/blob/main/LICENSE" target="_blank" rel="noopener">Licence</a></li>
+                    <li class="hide-xs"><a href="https://github.com/rouanis5/lpdwi_sass/" target="_blank" rel="noopener">GitHub</a></li>
+                </ul>
             </div>
         </div>
     </footer>

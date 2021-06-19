@@ -75,6 +75,7 @@ a {
 	@if ($screen == $sm) {
 		@media (max-width: $width + 10){
 			.container{width: 90%;}
+			.hide-xs{display: none;}
 		}
 	}
 }

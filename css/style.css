@@ -537,6 +537,10 @@ footer::after {
   bottom: 0;
 }
 
+footer ul li {
+  list-style: none;
+}
+
 .icon {
   position: fixed;
   top: 35px;
@@ -788,6 +792,9 @@ header .container, .content2 .container, .navigation nav {
 @media (max-width: 362px) {
   .container {
     width: 90%;
+  }
+  .hide-xs {
+    display: none;
   }
 }
 
