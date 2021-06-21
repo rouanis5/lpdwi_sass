@@ -75,7 +75,7 @@
 	ul {
 		@extend %flex;
 		$aPadding: 10px 30px;
-		height: $heightnav - 20;
+		height: $heightnav - 14;
 		flex-direction: column;
 		justify-content: space-between;
 		li {

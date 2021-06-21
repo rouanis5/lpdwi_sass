@@ -7,12 +7,14 @@ if (navigator.userAgent.indexOf("Firefox") != -1) {
             }
         </style>
         `
-    )
+    );
 }
 window.onload = function () {
-    if (window.matchMedia("(max-width: " + tabletWidth + ")").matches)
+    if (window.matchMedia("(max-width: " + tabletWidth + ")").matches){
         big = false;
-    else
+    }
+    else{
         big = true;
+    }
     MQ_799px();
 }

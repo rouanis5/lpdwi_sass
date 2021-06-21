@@ -1,4 +1,6 @@
-let tabletWidth = "799px", mainTransition = 700, transition1 = mainTransition;
+let tabletWidth = "799px", mainTransition = 700,
+    transition1 = mainTransition, page = 0, i,lastKey;
+let pagesId = ["header", "learnmore", "aboutUs", "contactUs","footer"]
 let urls = document.querySelectorAll(".navigation nav ul li a");
 function menuDisplay() {
     icon.classList.toggle("change");
@@ -14,47 +16,62 @@ function menuDisplay() {
         }, transition1
     );
 }
-for (let i = 0; i < urls.length; i++) {
+for (i = 0; i < urls.length; i++) {
     urls[i].onclick = function () {
         menuDisplay();
     }
 }
-
 let MQ_799px = function () {
     // if screen >= tabletwidth
     if (window.matchMedia("(max-width: " + tabletWidth + ")").matches && !big) {
-        box.appendChild(headerImg)
+        box.appendChild(headerImg);
         big = true;
-    } if (window.matchMedia("(min-width: " + tabletWidth + ")").matches && big) {
-        course.appendChild(headerImg)
+    }else if (window.matchMedia("(min-width: " + tabletWidth + ")").matches && big) {
+        course.appendChild(headerImg);
         big = false;
-    }
+    };
 }
-window.onresize = MQ_799px
-pagesId = ["header", "learnmore", "aboutUs", "footer"]
-var page = 0;
+window.onresize = MQ_799px;
 window.addEventListener("keydown", function (e) {
+    console.log(e.code);
     if (["Space"].indexOf(e.code) > -1) {
         e.preventDefault();
-    };
-    if (e.code == "ArrowUp" || e.code == "ArrowLeft") {
+    }
+    else if (e.code == "ArrowUp" || e.code == "ArrowLeft") {
         e.preventDefault();
         upDown(1);
-    };
-    if (e.code == "ArrowDown" || e.code == "ArrowRight") {
+    }
+    else if (e.code == "ArrowDown" || e.code == "ArrowRight") {
         e.preventDefault();
         upDown(2);
+        
     }
+    else if (e.code =="Tab"){
+        e.preventDefault();
+        menuDisplay();
+    }
+    else if (lastKey =="Alt"){
+        for (i = 1; i <= pagesId.length; i++) {
+            if (e.code == "Numpad"+i || e.code == "Digit"+i) {
+                e.preventDefault();
+                goHref(i-1);
+            }   
+        }
+    }
+    lastKey = e.key;
 }, false);
 function setPage(n) {
-    page = n;
+    page = Number(n);
 }
 function upDown(n) {
-    if (n == 1) {
-        if (page > 0 && page <= (pagesId.length - 1)) page--;
+    if (n === 1) {
+        if (page > 0 && page <= (pagesId.length - 1)) --page;
     }
-    else {
-        if (page >= 0 && page < (pagesId.length - 1)) page++;
+    else if(n === 2){
+        if (page >= 0 && page < (pagesId.length - 1)) ++page;
     }
-    window.location.href = "#" + pagesId[page];
+    goHref(page)
+}
+function goHref(n){
+    window.location.href = "#" + pagesId[n];
 }

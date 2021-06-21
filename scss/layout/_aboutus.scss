@@ -11,8 +11,13 @@
 	@media (max-width: $sm) {
 		height: 1331px;
 	}
-	@include myGradient(0deg,50%);
-	.title {
+	// @include myGradient(0deg,50%);
+	background: linear-gradient(13deg,#A88EE5,#FEA1F1,#336ED6);
+	background: url(../images/img3.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+	.title{
 		color: $titleColor2 !important;
 		padding-top: 42px;
 		margin-bottom: 46px;

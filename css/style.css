@@ -75,7 +75,7 @@ header .title::after {
   width: 563px;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1055px) {
   header .title::after {
     width: 425px;
   }
@@ -116,7 +116,7 @@ header p {
   text-overflow: ellipsis;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1055px) {
   header p {
     width: 372px;
   }
@@ -150,7 +150,7 @@ header .img:after {
   background-color: #ffefad;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1055px) {
   header .img, header .img img {
     width: 244px;
     height: 378px;
@@ -197,7 +197,7 @@ header a:hover {
   box-shadow: 0px 0px 0px 3px #ffffff;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1055px) {
   header a {
     max-width: 143px;
     padding: 3px 37px 7px 15px;
@@ -290,10 +290,14 @@ header a:hover {
   width: 100%;
   width: 100%;
   height: 540px;
-  background: transparent linear-gradient(0deg, #a9c9ff 50%, #ffbbec 100%) 0% 0% no-repeat padding-box;
+  background: linear-gradient(13deg, #A88EE5, #FEA1F1, #336ED6);
+  background: url(../images/img3.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1055px) {
   .aboutUs {
     height: 408px;
   }
@@ -421,7 +425,7 @@ header a:hover {
   transform: translateY(0);
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1055px) {
   .card {
     width: 196px;
     height: 263px;
@@ -501,6 +505,15 @@ header a:hover {
 
 .aboutUs .details img {
   height: 100vh;
+}
+
+.contactUs .title {
+  padding-top: 42px;
+  margin-bottom: 46px;
+}
+
+.contactUs .title::after {
+  width: 563px;
 }
 
 footer {
@@ -634,7 +647,7 @@ footer ul li {
 }
 
 .navigation ul {
-  height: 50vh;
+  height: 56vh;
   flex-direction: column;
   justify-content: space-between;
 }
@@ -771,9 +784,9 @@ header .container, .content2 .container, .navigation nav {
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1055px) {
   .container {
-    max-width: 789px;
+    max-width: 769px;
   }
 }
 
@@ -789,7 +802,7 @@ header .container, .content2 .container, .navigation nav {
   }
 }
 
-@media (max-width: 362px) {
+@media (max-width: 380px) {
   .container {
     width: 90%;
   }
@@ -798,7 +811,7 @@ header .container, .content2 .container, .navigation nav {
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1055px) {
   :root {
     --cardfont: 13px;
     --fontsize1: 14px;

@@ -68,12 +68,12 @@ a {
 	position: absolute !important;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	transform: translate(-50%,-50%);
 }
 @each $screen,$width in $screens {
 	@include mq-container(#{$screen},#{$width});
 	@if ($screen == $sm) {
-		@media (max-width: $width + 10){
+		@media (max-width: $width + 28){
 			.container{width: 90%;}
 			.hide-xs{display: none;}
 		}
