@@ -623,13 +623,14 @@ header a:hover {
 footer {
   font-size: var(--footerfont);
   font-weight: 800;
+  background: #ff72b9;
 }
 
 footer .container {
   justify-content: space-between;
   align-items: center;
   height: 55px;
-  color: #ffbbec;
+  color: #fff;
 }
 
 footer h5 {
@@ -637,7 +638,7 @@ footer h5 {
 }
 
 footer a {
-  color: #ffbbec;
+  color: #fff;
   margin-left: 15px;
   font: normal normal 800 var(--footerfont)/13px Montserrat;
 }
@@ -652,6 +653,7 @@ footer::after {
   height: 5px;
   position: absolute;
   bottom: 0;
+  background: #fff;
 }
 
 footer ul li {
@@ -848,7 +850,7 @@ a {
   text-decoration: none;
 }
 
-header, footer::after {
+header {
   background: transparent linear-gradient(109deg, #a9c9ff 0%, #ffbbec 100%) 0% 0% no-repeat padding-box;
 }
 

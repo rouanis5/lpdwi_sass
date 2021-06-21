@@ -9,7 +9,6 @@ html {
 body {
 	font-family: 'Lato', sans-serif;
 }
-$primaryColor: #ffbbec;
 :root {
 	--cardfont: var(--fontsize2);
 	--footerfont: var(--fontsize2);
@@ -29,6 +28,7 @@ $fs5: var(--fontsize5);
 $fs6: var(--fontsize6);
 $transitionTime: 0.7s ease-in-out;
 $colorbarH: 5px;
+$primaryColor: #ffbbec;
 
 $titleColor1: #ff72b9;
 $titleColor2: #fff;

@@ -2,18 +2,19 @@ footer {
 	@extend %parent;
 	font-size: var(--footerfont);
 	font-weight: 800;
+	background: $titleColor1;
 	.container {
 		@extend %flex;
 		justify-content: space-between;
 		align-items: center;
 		height: 50px + $colorbarH;
-		color: $primaryColor;
+		color:$titleColor2;
 	}
 	h5 {
 		font: normal normal 800 var(--footerfont)/19px Montserrat;
 	}
 	a {
-		color: $primaryColor;
+		color:$titleColor2;
 		margin-left: 15px;
 		font: normal normal 800 var(--footerfont)/13px Montserrat;
 		&:hover{
@@ -21,13 +22,12 @@ footer {
 		}
 	}
 	&::after {
-		content: "";
+		content:"";
 		width: 100%;
 		height: $colorbarH;
 		position: absolute;
 		bottom: 0;
-		@extend %mygradient0;
-		
+		background: $titleColor2;
 	}
 	ul li{
 		list-style: none;
