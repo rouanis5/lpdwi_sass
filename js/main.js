@@ -1,4 +1,4 @@
-let tabletWidth = "799px", mainTransition = 700,
+let tabletWidth = "799px", mainTransition = 700 ,big,
     transition1 = mainTransition, page = 0, i,lastKey;
 let pagesId = ["header", "learnmore", "aboutUs", "contactUs","footer"]
 let urls = document.querySelectorAll(".navigation nav ul li a");
@@ -21,6 +21,15 @@ for (i = 0; i < urls.length; i++) {
         menuDisplay();
     }
 }
+window.onload = function () {
+    if (window.matchMedia("(max-width: " + tabletWidth + ")").matches){
+        big = false;
+    }
+    else{
+        big = true;
+    }
+    MQ_799px();
+}
 let MQ_799px = function () {
     // if screen >= tabletwidth
     if (window.matchMedia("(max-width: " + tabletWidth + ")").matches && !big) {
@@ -33,7 +42,6 @@ let MQ_799px = function () {
 }
 window.onresize = MQ_799px;
 window.addEventListener("keydown", function (e) {
-    console.log(e.code);
     if (["Space"].indexOf(e.code) > -1) {
         e.preventDefault();
     }

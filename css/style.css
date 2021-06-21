@@ -507,13 +507,117 @@ header a:hover {
   height: 100vh;
 }
 
-.contactUs .title {
+.contactUs {
+  position: relative;
+  overflow: hidden;
+  height: clamp(684px, 100vh, 900px);
+}
+
+.contactUs::before {
+  transition: 0.7s ease-in-out;
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background: linear-gradient(316deg, #A9C9FF80 0%, #FFBBEC);
+}
+
+@media (max-width: 799px) {
+  .contactUs::before {
+    top: 50%;
+    width: 100%;
+    height: 50%;
+  }
+}
+
+.contactUs .container {
+  align-items: center;
+  height: inherit;
+}
+
+@media (max-width: 799px) {
+  .contactUs .container {
+    flex-direction: column;
+  }
+}
+
+.contactUs .right, .contactUs .left {
+  width: 50%;
+}
+
+@media (max-width: 799px) {
+  .contactUs .right, .contactUs .left {
+    width: 100%;
+  }
+}
+
+.contactUs .left {
+  flex-direction: column;
+  height: 358px;
+  justify-content: space-between;
+}
+
+.contactUs .left .title {
   padding-top: 42px;
   margin-bottom: 46px;
 }
 
-.contactUs .title::after {
-  width: 563px;
+.contactUs .left .title::after {
+  width: 100%;
+  max-width: 499px;
+}
+
+.contactUs .left .info p {
+  width: 388px;
+  margin-top: auto;
+  line-height: 23px;
+  color: #707070;
+  font-size: var(--fontsize2);
+}
+
+@media (max-width: 799px) {
+  .contactUs .left .info p {
+    width: 100%;
+  }
+}
+
+.contactUs .left .info p a {
+  color: #ff72b9;
+}
+
+.contactUs .left .info p a:hover {
+  text-decoration: underline;
+}
+
+.contactUs .left .info .social {
+  width: 274.5px;
+  margin-left: 20px;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.contactUs .left .info .social ul {
+  justify-content: space-between;
+}
+
+.contactUs .left .info .social ul li {
+  list-style-type: none;
+}
+
+.contactUs .left .info .social ul li a {
+  position: relative;
+  color: #ff72b9;
+  font-size: 25px;
+}
+
+.contactUs .left .info .social ul li a::before {
+  content: "";
+  border-radius: 50%;
+  border: 2px #ff72b9 solid;
+  width: 52px;
+  height: 52px;
 }
 
 footer {
@@ -748,7 +852,7 @@ header, footer::after {
   background: transparent linear-gradient(109deg, #a9c9ff 0%, #ffbbec 100%) 0% 0% no-repeat padding-box;
 }
 
-header .course, header .box, footer .container, .navigation ul,
+header .course, header .box, .contactUs .container, .contactUs .left, .contactUs .left .info .social ul, footer .container, .navigation ul,
 .flex {
   display: flex;
 }
@@ -771,7 +875,7 @@ header .img:after {
   transform: translateY(-50%);
 }
 
-header .container, .content2 .container, .navigation nav {
+header .container, .content2 .container, .contactUs .left .info .social ul li a::before, .navigation nav {
   position: absolute !important;
   top: 50%;
   left: 50%;
