@@ -1,5 +1,5 @@
 @mixin myGradient($angle,$opacity){
-	background: transparent linear-gradient($angle, #a9c9ff $opacity , #ffbbec 100%) 0% 0% no-repeat padding-box;
+	background: transparent linear-gradient($angle, $mainCyan $opacity , #ffbbec 100%) 0% 0% no-repeat padding-box;
 }
 @mixin weth($width,$height) {
 	width: $width;

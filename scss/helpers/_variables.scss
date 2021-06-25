@@ -29,6 +29,7 @@ $fs6: var(--fontsize6);
 $transitionTime: 0.7s ease-in-out;
 $colorbarH: 5px;
 $primaryColor: #ffbbec;
+$mainCyan: #a9c9ff;
 
 $titleColor1: #ff72b9;
 $titleColor2: #fff;
@@ -47,7 +48,6 @@ $h-white: 7.83vh;
 $radiant: var(--radiant);
 $xl: 1366px;
 $lg: 1055px;
-// $lg: 1024px;
 $md: 799px;
 $sm: 576px;
 $screens: ($xl: 1014px, $lg:769px, $md:480px, $sm:352px);

@@ -1,6 +1,6 @@
-let tabletWidth = "799px", mainTransition = 700 ,big,
-    transition1 = mainTransition, page = 0, i,lastKey;
-let pagesId = ["header", "learnmore", "aboutUs", "contactUs","footer"]
+let tabletWidth = "799px", mainTransition = 700, big,
+    transition1 = mainTransition, page = 0, i, lastKey;
+let pagesId = ["header", "learnmore", "aboutUs", "contactUs", "footer"]
 let urls = document.querySelectorAll(".navigation nav ul li a");
 function menuDisplay() {
     icon.classList.toggle("change");
@@ -22,10 +22,10 @@ for (i = 0; i < urls.length; i++) {
     }
 }
 window.onload = function () {
-    if (window.matchMedia("(max-width: " + tabletWidth + ")").matches){
+    if (window.matchMedia("(max-width: " + tabletWidth + ")").matches) {
         big = false;
     }
-    else{
+    else {
         big = true;
     }
     MQ_799px();
@@ -35,35 +35,36 @@ let MQ_799px = function () {
     if (window.matchMedia("(max-width: " + tabletWidth + ")").matches && !big) {
         box.appendChild(headerImg);
         big = true;
-    }else if (window.matchMedia("(min-width: " + tabletWidth + ")").matches && big) {
+    } else if (window.matchMedia("(min-width: " + tabletWidth + ")").matches && big) {
         course.appendChild(headerImg);
         big = false;
     };
 }
 window.onresize = MQ_799px;
 window.addEventListener("keydown", function (e) {
-    if (["Space"].indexOf(e.code) > -1) {
-        e.preventDefault();
+    if (!e.target.form) {
+        if (["Space"].indexOf(e.code) > -1) {
+            e.preventDefault();
+        }
+        else if (e.code == "ArrowUp" || e.code == "ArrowLeft") {
+            e.preventDefault();
+            upDown(1);
+        }
+        else if (e.code == "ArrowDown" || e.code == "ArrowRight") {
+            e.preventDefault();
+            upDown(2);
+        }
     }
-    else if (e.code == "ArrowUp" || e.code == "ArrowLeft") {
-        e.preventDefault();
-        upDown(1);
+    if (e.code == "Tab") {
+            e.preventDefault();
+            menuDisplay();
     }
-    else if (e.code == "ArrowDown" || e.code == "ArrowRight") {
-        e.preventDefault();
-        upDown(2);
-        
-    }
-    else if (e.code =="Tab"){
-        e.preventDefault();
-        menuDisplay();
-    }
-    else if (lastKey =="Alt"){
+    else if (lastKey == "Alt") {
         for (i = 1; i <= pagesId.length; i++) {
-            if (e.code == "Numpad"+i || e.code == "Digit"+i) {
+            if (e.code == "Numpad" + i || e.code == "Digit" + i) {
                 e.preventDefault();
-                goHref(i-1);
-            }   
+                goHref(i - 1);
+            }
         }
     }
     lastKey = e.key;
@@ -75,11 +76,11 @@ function upDown(n) {
     if (n === 1) {
         if (page > 0 && page <= (pagesId.length - 1)) --page;
     }
-    else if(n === 2){
+    else if (n === 2) {
         if (page >= 0 && page < (pagesId.length - 1)) ++page;
     }
     goHref(page)
 }
-function goHref(n){
+function goHref(n) {
     window.location.href = "#" + pagesId[n];
 }
