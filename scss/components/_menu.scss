@@ -1,16 +1,61 @@
-.icon {
-	position: fixed;
-	top: 35px;
+%common{
 	right: 55px;
+	position: fixed;
 	z-index: 5;
 	cursor: pointer;
 	display: inline-block;
+	transition: $transitionTime;
+	@media (max-width: $sm){
+		right: 0;
+	}
+}
+.theme{
+	@extend %common;
+	width: 55px;
+	height: 30px;
+	top: 90px;
+	border-radius: 30px;
+	border: 5px solid $other;
+	background: $other;
+	@media (max-width: $sm){
+		top: 60px;
+	}
+	.circle{
+		@extend %center-y;
+		width: 25px;
+		height: 25px;
+		border-radius: 50%;
+		z-index: 10;
+		background: $backgroundColor;
+		transition: $transitionTime;
+	}
+}
+body.whiteTheme .theme{
+	.circle{
+		left: 0;
+	}
+}
+body.blackTheme .theme{
+	.circle{
+		left: calc(100% - 25px);
+	}
+}
+.icon {
+	@extend %common;
+	top: 35px;
+	margin-right: 10px;
+	@media (max-width: $sm){
+		margin-right: unset;
+		top: 0;
+		right: 0;
+		padding: 8px;
+	}
 	.bar1,
 	.bar2,
 	.bar3 {
 		width: 35px;
 		height: 5px;
-		background-color: #fff;
+		background-color: $white;
 		margin: 6px 0;
 		transition: $transitionTime;
 	}
@@ -24,14 +69,17 @@
 			width: 100vw;
 			height: 100vh;
 			border-radius: 0;
-			transform: translate(55px,-35px);
-			background: rgba($titleColor1, 0.7);
+			transform: translate(65px,-35px);
+			background: rgba($titleColor1S, 0.7);
 			backdrop-filter: blur(10px);
+			@media (max-width: $sm){
+				transform: translate(0,0);
+			}
 		}
 		&:hover{
 			&::before{
-			border: none;
-			box-shadow: none
+				border: none;
+				box-shadow: none
 			}
 		}
 	}
@@ -47,10 +95,13 @@
 		padding: 5px;
 		z-index: -1;
 		border-radius: 50%;
-		background: rgba($titleColor1, 0.9);
+		background: rgba($titleColor1S, 0.9);
 		box-shadow: 0 0 0 #00000000;
+		@media (max-width: $sm){
+			border-radius: 0;
+		}
 	}
-	&:hover::before{border: 3px solid #fff;box-shadow: 0 0 0 1px #00000029}
+	&:hover::before{border: 3px solid $white;box-shadow: 0 0 0 1px #00000029}
 }
 .navigation{
 	position: fixed;
@@ -81,7 +132,7 @@
 		li {
 			list-style: none;
 			a {
-				color: white;
+				color: $white;
 				font-size: $fs4;
 				padding: $aPadding;
 				border-radius: 49px;
@@ -90,13 +141,13 @@
 			&:nth-child(1) {
 				a {
 					color: $titleColor1;
-					background: white;
+    				background: $backgroundColor;
 				}
 			}
 			&:hover {
 				a {
 					color: $titleColor1;
-					background: white;
+					background: $backgroundColor;
 					box-shadow: 0px 3px 6px #00000029;
 				}
 			}

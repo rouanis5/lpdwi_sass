@@ -1,20 +1,22 @@
 .content2 {
-	overflow: hidden;
 	border: 3px solid $paragraphColor;
 	height: clamp(730px,100vh,900px);
 	border-left: none;
 	border-right: none;
+	overflow: hidden;
 	position: relative;
 	@media (max-width: $md) {
 		border: none;
-		max-height: 500px;
+		height: unset;
 		.image{
 			display: none;
 		}
 	}
 	.container {
 		margin: auto;
-		@extend %center;
+		@media (min-width: $md){
+			@include center;
+		}
 	}
 	.right {
 		width: 788px;

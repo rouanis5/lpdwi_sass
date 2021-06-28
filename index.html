@@ -7,13 +7,13 @@
     <meta name="author" content="LPDWI Groupe 7">
     <meta name="description" content="LPDWI offers a rare course in web develepment, now you can learn sass for free and high quality education">
     <meta name="keywords" content="LPDWI sass license proffessionel web develpement projet tuteuré groupe team 7">
-    <meta property="og:url" content="https://rouanis5.github.io/lpdwi_sass" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="LPDWI SASS COURSE" />
+    <meta property="og:url" content="https://rouanis5.github.io/lpdwi_sass">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="LPDWI SASS COURSE">
     <meta property="og:site_name" content="LPDWI SASS COURSE">
-    <meta property="og:description"content="LPDWI offers a rare course in web develepment, now you can learn sass for free and high quality education" />
-    <meta property="og:image" content="https://rouanis5.github.io/lpdwi_sass/images/thumbnail.jpg" />
-    <meta property="fb:app_id" content="1481557582185297" />
+    <meta property="og:description"content="LPDWI offers a rare course in web develepment, now you can learn sass for free and high quality education">
+    <meta property="og:image" content="https://rouanis5.github.io/lpdwi_sass/images/thumbnail.jpg">
+    <meta property="fb:app_id" content="1481557582185297">
     <meta name="twitter:title" content="LPDWI SASS COURSE">
     <meta name="twitter:description" content="LPDWI offers a rare course in web develepment, now you can learn sass for free and high quality education">
     <meta name="twitter:image" content="https://rouanis5.github.io/lpdwi_sass/images/thumbnail.jpg">
@@ -24,16 +24,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.min.css">
     <script src="js/onload.js"></script>
     <title>LPDWI | Sass course</title>
-    </head>
-<body>
+</head>
+<body class="whiteTheme">
     <noscript style="font-size: 20px;color: red;">Javascript must be enabled</noscript>
     <div id="icon" class="icon" onclick="menuDisplay()">
         <div class="bar1"></div>
         <div class="bar2"></div>
         <div class="bar3"></div>
+    </div>
+    <div class="theme" id="changeTheme">
+        <div class="circle"></div>
     </div>
     <div id="menu" class="navigation">
         <nav> 		
@@ -84,7 +87,6 @@
                             Sass is completely compatible with all versions of CSS
                             Sass reduces repetition of CSS and therefore saves time
                         </p>
-                        <!-- <span></span> -->
                     </div>
                 </div>
                 <div>
@@ -93,7 +95,6 @@
                     </div>
                     <div>
                         <p>Stylesheets are getting larger, more complex, and harder to maintain. This is where a CSS pre-processor can help.Sass lets you use features that do not exist in CSS, like variables, nested rules, mixins, imports, inheritance, built-in functions, and other stuff.</p>
-                        <!-- <span></span> -->
                     </div>
                 </div> 
             </div>
@@ -157,7 +158,6 @@
             </div>
         </div>
     </div>
-    <!-- <div class="whitespace"></div> -->
     <div class="contactUs" id="contactUs" onmouseover="setPage(3)">
         <div class="container">
             <div class="left">
@@ -189,6 +189,30 @@
             </div>
         </div>
     </div>
+    <div class="adresses">
+        <div class="container">
+            <div class="box">
+                <i class="fas fa-phone-alt"></i>
+                <section>
+                    <a href="tel:+213-987-654-321">+213-987-654-321</a>
+                    <a href="tel:+1-789-456-123">+1-789-456-123</a>
+                </section>
+            </div>
+            <div class="box">
+                <i class="far fa-envelope"></i>
+                <section>
+                    <a href="mailto:loremipsum@lpdwi.com">loremipsum@lpdwi.com</a>
+                    <a href="mailto:lorem@ipsum.com">lorem@ipsum.com</a>
+                </section>
+            </div>
+            <div class="box">
+                <i class="fas fa-map-marker-alt"></i>
+                <section>
+                    <a href="javascript:void(0)">Cité 580 logts Bt 15 n°2,<br>Boumèrdes , Algeria</a>
+                </section>
+            </div>
+        </div>
+    </div>
     <footer id="footer" onmouseover="setPage(4)">
         <div class="container">
             <h5>&copy; Boumerdes university 2021</h5>
@@ -202,17 +226,5 @@
         </div>
     </footer>
     <script src="js/main.js"></script>
-    <!-- <div class="details">
-        <div class="container">
-            <div class="flex">
-                <img src="images/profilesHD/per1.jpg" alt="IDJA Mohamed Ouanis">
-                <div class="right">
-                    <div class="title">
-                        <h3>IDJA Mohamed Ouanis</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
 </body>
 </html>

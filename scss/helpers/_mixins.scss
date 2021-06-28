@@ -1,5 +1,5 @@
 @mixin myGradient($angle,$opacity){
-	background: transparent linear-gradient($angle, $mainCyan $opacity , #ffbbec 100%) 0% 0% no-repeat padding-box;
+	background: transparent linear-gradient($angle, $mainCyan $opacity , $primaryColor 100%) 0% 0% no-repeat padding-box;
 }
 @mixin weth($width,$height) {
 	width: $width;
@@ -16,4 +16,10 @@
         margin-top: $margintop;
         font: normal $weight var(--cardfont)/$lineheight Montserrat;
     }
+}
+@mixin center{
+	position: absolute !important;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
 }

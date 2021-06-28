@@ -35,7 +35,7 @@
 	position: relative;
 	@include weth(100%, $h-white);
 	max-height: 62px;
-	background-color: white;
+    background: $backgroundColor;
 	@media (max-height: $md){
 		max-height: $h-white;
 	}
@@ -64,18 +64,20 @@ a {
 	top: 50%;
 	transform: translateY(-50%);
 }
-%center {
-	position: absolute !important;
-	top: 50%;
+%center-x{
+	position: absolute;
 	left: 50%;
-	transform: translate(-50%,-50%);
+	transform: translateX(-50%);
+}
+%center {
+	@include center;
 }
 @each $screen,$width in $screens {
 	@include mq-container(#{$screen},#{$width});
 	@if ($screen == $sm) {
 		@media (max-width: $width + 28){
-			.container{width: 90%;}
-			.hide-xs{display: none;}
+			.container{width: 90%}
+			.hide-xs{display: none}
 		}
 	}
 }

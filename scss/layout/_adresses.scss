@@ -1,0 +1,72 @@
+.adresses{
+    @media(min-width: $md){
+        border-top: 1px solid $paragraphColor;
+    }
+    .container{
+        @extend %flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        @media(min-width: $md){
+            height: 222px;
+        }
+    }
+    .box{
+        margin: 32px 0;
+        width: 200px;
+        position: relative;
+        &,section{
+            @extend %flex;
+            flex-direction: column;
+            text-align: center;
+        }
+        section{
+            margin-top: 15px;
+        }
+        &::before{
+            content: "";
+            @extend %center-x;
+            height: 5px;
+            top: 0;
+            width: 0;
+            background: $titleColor1;
+            transition: $transitionTime;
+        }
+        &:hover{
+            &::before{
+                width: 100%;
+                top: 110%;
+                border-radius: 50px;
+            }
+        }
+        i{
+            font-size: 32px;
+            color: #fff;
+            position: relative;
+            margin: 20px;
+            transition: $transitionTime;
+            z-index: 2;
+            &:hover{
+                transform:scale(1.1) rotate(30deg);
+            }
+            &::after{
+                content: "";
+                @extend %center;
+                border-radius: 50%;
+                background: $titleColor1;
+                width: 72px;
+                height: 72px;
+                z-index: -1;
+            }
+        }
+        a{
+            color: $paragraphColor;
+            font-size: $fs2;
+            line-height: 22px;
+            text-decoration: none;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+}

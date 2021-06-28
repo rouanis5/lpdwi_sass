@@ -2,6 +2,8 @@ let tabletWidth = "799px", mainTransition = 700, big,
     transition1 = mainTransition, page = 0, i, lastKey;
 let pagesId = ["header", "learnmore", "aboutUs", "contactUs", "footer"]
 let urls = document.querySelectorAll(".navigation nav ul li a");
+const theme = localStorage.getItem('theme');
+
 function menuDisplay() {
     icon.classList.toggle("change");
     setTimeout(
@@ -17,12 +19,10 @@ function menuDisplay() {
     );
 }
 for (i = 0; i < urls.length; i++) {
-    urls[i].onclick = function () {
-        menuDisplay();
-    }
+    urls[i].onclick = menuDisplay;
 }
 window.onload = function () {
-    if (window.matchMedia("(max-width: " + tabletWidth + ")").matches) {
+    if (window.matchMedia(`(max-width: ${tabletWidth})`).matches) {
         big = false;
     }
     else {
@@ -30,7 +30,7 @@ window.onload = function () {
     }
     MQ_799px();
 }
-let MQ_799px = function () {
+function MQ_799px(){
     // if screen >= tabletwidth
     if (window.matchMedia("(max-width: " + tabletWidth + ")").matches && !big) {
         box.appendChild(headerImg);
@@ -83,4 +83,25 @@ function upDown(n) {
 }
 function goHref(n) {
     window.location.href = "#" + pagesId[n];
+}
+//change between themes and creating a local storage
+if (theme ) {
+    window[theme]();
+}
+
+changeTheme.onclick = function(){
+    if (document.body.classList.value == "whiteTheme") {
+        blackTheme();
+    }
+    else{
+        whiteTheme();
+    }
+    localStorage.setItem("theme", document.body.classList.value);
+}
+function whiteTheme(){
+    document.body.classList.replace("blackTheme","whiteTheme");
+    
+}
+function blackTheme(){
+    document.body.classList.replace("whiteTheme","blackTheme");
 }

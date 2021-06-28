@@ -1,13 +1,46 @@
-* {
-	box-sizing: border-box;
-	margin: 0 ;
-	padding: 0 ;
-}
-html {
-	scroll-behavior: smooth;
-}
+$transitionTime: 0.7s ease-in-out;
+$colorbarH: 5px;
+
 body {
-	font-family: 'Lato', sans-serif;
+	&.whiteTheme {
+		--white: #fff;
+		--primaryColorS: 255, 187, 236;
+		--mainCyanS: 169, 201, 255;
+		--backgroundColor: var(--white);
+		--other: #262a2b;
+		--titleColor1S: 255, 114, 185;
+		--paragraphColor: #707070;
+		--circleColor: #ffefad;
+		--cardColor: var(--white);
+		--cardColor1: #afc8fe;
+		--cardColor2: #18d0e9;
+		--cardColor3: #ffc730;
+		--cardColor4: #fda57a;
+		--aboutusColor: url(../images/img3.jpg);
+		--formColor: var(--white);
+		--formFontColor: unset;
+	}
+	&.blackTheme {
+		--white: #d0ccc5;
+		--primaryColorS: 114, 25, 70;
+		--mainCyanS: 63, 93, 145;
+		--backgroundColor: #262a2b;
+		--other: var(--white);
+		--titleColor1S: 185, 70, 128;
+		--paragraphColor: var(--white);
+		--circleColor: #c4a932;
+		--cardColor: #363a3c40;
+		--cardColor1: #b7c4dd;
+		--cardColor2: #2fbdd0;
+		--cardColor3: #eabd43;
+		--cardColor4: #f0ac8a;
+		--aboutusColor: linear-gradient(13deg, #32196d66, #6b015ca1, #2151a566);
+		--formColor: #333333f5;
+		--formFontColor: var(--white);
+	}
+	--primaryColor: rgb(var(--primaryColorS));
+	--titleColor1: rgb(var(--titleColor1S));
+	--mainCyan: rgb(var(--mainCyanS));
 }
 :root {
 	--cardfont: var(--fontsize2);
@@ -18,30 +51,38 @@ body {
 	--fontsize4: 35px;
 	--fontsize5: 64px;
 	--fontsize6: 71px;
-    --radiant: 797px;
+	--radiant: 797px;
 }
+$white: var(--white);
+$primaryColor: var(--primaryColor);
+$mainCyan: var(--mainCyan);
+$backgroundColor: var(--backgroundColor);
+$other: var(--other);
+$titleColor1: var(--titleColor1);
+$titleColor2: $white;
+$paragraphColor: var(--paragraphColor);
+$paragraphColor1: $white;
+$circleColor: var(--circleColor);
+$cardColor: var(--cardColor);
+$cardColor1: var(--cardColor1);
+$cardColor2: var(--cardColor2);
+$cardColor3: var(--cardColor3);
+$cardColor4: var(--cardColor4);
+$aboutusColor: var(--aboutusColor);
+$formColor: var(--formColor);
+$formFontColor: var(--formFontColor);
+
+$primaryColorS: var(--primaryColorS);
+$mainCyanS: var(--mainCyanS);
+$titleColor1S: var(--titleColor1S);
+
 $fs1: var(--fontsize1);
 $fs2: var(--fontsize2);
 $fs3: var(--fontsize3);
 $fs4: var(--fontsize4);
 $fs5: var(--fontsize5);
 $fs6: var(--fontsize6);
-$transitionTime: 0.7s ease-in-out;
-$colorbarH: 5px;
-$primaryColor: #ffbbec;
-$mainCyan: #a9c9ff;
 
-$titleColor1: #ff72b9;
-$titleColor2: #fff;
-$paragraphColor1: #fff;
-$paragraphColor: #707070;
-$circleColor: #ffefad;
-
-$cardColor1: #afc8fe;
-$cardColor2: #18d0e9;
-$cardColor3: #ffc730;
-$cardColor4: #fda57a;
-$cardHover: #fff;
 $cardColors: ($cardColor1, $cardColor2, $cardColor3, $cardColor4);
 
 $h-white: 7.83vh;
@@ -52,3 +93,15 @@ $md: 799px;
 $sm: 576px;
 $screens: ($xl: 1014px, $lg:769px, $md:480px, $sm:352px);
 // $screens: ($xl: 1014px, $lg:789px, $md:480px, $sm:352px);
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+html {
+	scroll-behavior: smooth;
+}
+body {
+	font-family: 'Lato', sans-serif;
+	background: $backgroundColor;
+}

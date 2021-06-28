@@ -68,7 +68,7 @@ header {
             width: 372px;
 		}
 		@media (max-width: $md) {
-            @include weth(100%,92px);
+            @include weth(100%,95px);
 			order: 1;
 		}
 	}
@@ -109,7 +109,7 @@ header {
     }
 	a {
         text-decoration: none;
-		color: white;
+		color: $white;
 		padding: 4px 43px 9px 19px;
 		max-width: 189px;
 		font-size: $fs3;
