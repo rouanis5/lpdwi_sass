@@ -985,7 +985,7 @@ header a:hover {
 
 .adresses .box i {
 	font-size: 32px;
-	color: #fff;
+	color: var(--white);
 	position: relative;
 	margin: 20px;
 	-webkit-transition: 0.7s ease-in-out;
