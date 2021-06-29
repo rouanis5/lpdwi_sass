@@ -4,6 +4,10 @@ let pagesId = ["header", "learnmore", "aboutUs", "contactUs", "footer"]
 let urls = document.querySelectorAll(".navigation nav ul li a");
 const theme = localStorage.getItem('theme');
 
+if (window.getComputedStyle(filter, null).getPropertyValue("backdrop-filter") != "blur(10px)"){
+    icon.classList.toggle("mozilla");
+}
+
 function menuDisplay() {
     icon.classList.toggle("change");
     setTimeout(
@@ -46,6 +50,14 @@ window.addEventListener("keydown", function (e) {
         if (["Space"].indexOf(e.code) > -1) {
             e.preventDefault();
         }
+        else if(e.code == "KeyT"){
+            console.log(e.code);
+            changeTheme();
+        }
+        else if (e.code == "Tab") {
+                e.preventDefault();
+                menuDisplay();
+        }
         else if (e.code == "ArrowUp" || e.code == "ArrowLeft") {
             e.preventDefault();
             upDown(1);
@@ -55,11 +67,7 @@ window.addEventListener("keydown", function (e) {
             upDown(2);
         }
     }
-    if (e.code == "Tab") {
-            e.preventDefault();
-            menuDisplay();
-    }
-    else if (lastKey == "Alt") {
+    if (lastKey == "Alt") {
         for (i = 1; i <= pagesId.length; i++) {
             if (e.code == "Numpad" + i || e.code == "Digit" + i) {
                 e.preventDefault();
@@ -88,8 +96,9 @@ function goHref(n) {
 if (theme ) {
     window[theme]();
 }
+switchTheme.onclick = changeTheme;
 
-changeTheme.onclick = function(){
+function changeTheme(){
     if (document.body.classList.value == "whiteTheme") {
         blackTheme();
     }
@@ -100,7 +109,6 @@ changeTheme.onclick = function(){
 }
 function whiteTheme(){
     document.body.classList.replace("blackTheme","whiteTheme");
-    
 }
 function blackTheme(){
     document.body.classList.replace("whiteTheme","blackTheme");

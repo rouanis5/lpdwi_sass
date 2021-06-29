@@ -19,6 +19,8 @@ body {
 		--aboutusColor: url(../images/img3.jpg);
 		--formColor: var(--white);
 		--formFontColor: unset;
+		--contactBg: #ffe4f1;
+		--svg: url(../images/formW.svg);
 	}
 	&.blackTheme {
 		--white: #d0ccc5;
@@ -37,6 +39,8 @@ body {
 		--aboutusColor: linear-gradient(13deg, #32196d66, #6b015ca1, #2151a566);
 		--formColor: #333333f5;
 		--formFontColor: var(--white);
+		--contactBg: #331826 !important;
+		--svg: url(../images/formB.svg);
 	}
 	--primaryColor: rgb(var(--primaryColorS));
 	--titleColor1: rgb(var(--titleColor1S));
@@ -71,7 +75,9 @@ $cardColor4: var(--cardColor4);
 $aboutusColor: var(--aboutusColor);
 $formColor: var(--formColor);
 $formFontColor: var(--formFontColor);
+$contactBg: var(--contactBg);
 
+$svg: var(--svg);
 $primaryColorS: var(--primaryColorS);
 $mainCyanS: var(--mainCyanS);
 $titleColor1S: var(--titleColor1S);

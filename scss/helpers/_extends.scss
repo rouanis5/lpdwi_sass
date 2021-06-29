@@ -10,22 +10,28 @@
 	transition: $transitionTime;
 	color: $titleColor1;
 	text-transform: uppercase;
-	margin-bottom: 12px;
+	margin-bottom: 19px;
+	user-select: none;
     @media (max-width: $md) {
         text-align: center;
+		text-shadow: 0px 3px 6px #00000029;
+		&::after{
+			box-shadow: 0px 3px 6px #00000029;
+		}
     }
     h1 {font-size: $fs6;}
     h2 {font-size: $fs5;}
     h3 {font-size: $fs4;}
     position: relative;
     &::after {
+        content: "";
 		transition: $transitionTime;
         background-color: $titleColor1 !important;
-        content: "";
         position: absolute;
         border: 3px solid $titleColor1;
         position: absolute;
         left: 0;
+		bottom: -19px;
         @media (max-width: $md) {
             width: 100% !important;
         }
@@ -42,6 +48,11 @@
 }
 a {
 	text-decoration: none;
+}
+.filter{
+	backdrop-filter: blur(10px);
+	z-index: -50;
+	position: absolute;
 }
 %mygradient0{
 	@include myGradient(109deg,0%)

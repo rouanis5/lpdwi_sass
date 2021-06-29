@@ -39,9 +39,6 @@ header {
 			@media (max-width: $lg) {
                 width: 425px;
 			}
-			@media (max-width: $md) {
-                box-shadow: 0px 3px 6px #00000029;
-			}
 		}
 		@media (max-width: $md) {
             margin-bottom: 63px;
@@ -49,9 +46,6 @@ header {
         h1,h2{
 			margin: 0;
             transition: $transitionTime;
-            @media (max-width: $md) {
-                text-shadow: 0px 3px 6px #00000029;
-            }
         }
 	}
 	p {
@@ -116,7 +110,7 @@ header {
 		background-color: $titleColor1;
 		border-radius: 34px;
 		transition: 0.3s;
-		&:hover{box-shadow: 0px 0px 0px 3px #ffffff}
+		&:hover{box-shadow: 0px 0px 0px 3px $white}
 		@media (max-width: $lg) {
             max-width: 143px;
 			padding: 3px 37px 7px 15px;
