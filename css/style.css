@@ -62,6 +62,7 @@ body.blackTheme {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html {
@@ -931,6 +932,117 @@ footer ul li {
   list-style: none;
 }
 
+.shortcuts {
+  display: none;
+  position: fixed !important;
+  width: 100%;
+  height: 100vh;
+  z-index: 4;
+  backdrop-filter: blur(10px);
+}
+
+.shortcuts.display {
+  display: block;
+}
+
+.shortcuts.mozilla {
+  background: var(--backgroundColor);
+}
+
+@media (max-width: 799px) {
+  .shortcuts {
+    z-index: 10;
+  }
+}
+
+.shortcuts .container {
+  overflow: hidden;
+  height: 80vh;
+  box-shadow: -1px 4px 6px 3px #00000029;
+  background: var(--backgroundColor);
+  border: solid 7px var(--titleColor1);
+  transition: 0.7s ease-in-out;
+}
+
+@media (max-width: 576px) {
+  .shortcuts .container {
+    height: 102vh;
+  }
+}
+
+.shortcuts .container .container2 {
+  width: 90%;
+  height: 90%;
+}
+
+.shortcuts .title {
+  justify-content: space-between;
+}
+
+.shortcuts .title::after {
+  width: 100%;
+}
+
+.shortcuts section {
+  justify-content: space-between;
+  flex-wrap: wrap;
+  height: 90%;
+}
+
+.shortcuts section .right, .shortcuts section .left {
+  width: 47%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: repeat(7, 1fr);
+  align-items: center;
+}
+
+@media (max-width: 576px) {
+  .shortcuts section .right, .shortcuts section .left {
+    width: 100%;
+    height: 63.63636%;
+  }
+}
+
+@media (max-width: 576px) {
+  .shortcuts section .left {
+    grid-template-rows: repeat(4, 1fr) !important;
+    height: 36.36364% !important;
+  }
+}
+
+.shortcuts section .row {
+  justify-content: space-between;
+}
+
+.shortcuts section .row .keys span, .shortcuts section .row .keys b {
+  font-size: var(--fontsize2);
+  line-height: 28px;
+  display: inline-block;
+  text-align: center;
+  height: 30px;
+  margin-left: 5px;
+  user-select: none;
+}
+
+.shortcuts section .row .keys span {
+  color: var(--white);
+  background: #262A2B;
+  border: 1px solid var(--paragraphColor);
+  width: 30px;
+}
+
+.shortcuts section .row .keys b {
+  color: var(--paragraphColor);
+  width: 10px;
+}
+
+.shortcuts section h3 {
+  font-size: var(--fontsize2);
+  color: var(--paragraphColor);
+  line-height: calc(100% + var(--fontsize2));
+}
+
 .theme, .icon {
   right: 55px;
   position: fixed;
@@ -1206,7 +1318,7 @@ header {
   background: transparent linear-gradient(109deg, var(--mainCyan) 0%, var(--primaryColor) 100%) 0% 0% no-repeat padding-box;
 }
 
-header .course, header .box, .contactUs .container, .contactUs .left, .contactUs .left .social ul, .contactUs .right .outform .form, .adresses .container, .adresses .box, .adresses .box section, footer .container, .navigation ul,
+header .course, header .box, .contactUs .container, .contactUs .left, .contactUs .left .social ul, .contactUs .right .outform .form, .adresses .container, .adresses .box, .adresses .box section, footer .container, .shortcuts .title, .shortcuts section, .shortcuts section .row, .shortcuts section .row .keys, .navigation ul,
 .flex {
   display: flex;
 }
@@ -1235,7 +1347,7 @@ header .img:after {
   transform: translateX(-50%);
 }
 
-header .container, .contactUs .left .social ul li a i, .contactUs .right .outform::before, .adresses .box i::after, .navigation, .navigation nav {
+header .container, .contactUs .left .social ul li a i, .contactUs .right .outform::before, .adresses .box i::after, .shortcuts .container, .shortcuts .container .container2, .navigation, .navigation nav {
   position: absolute;
   top: 50%;
   left: 50%;

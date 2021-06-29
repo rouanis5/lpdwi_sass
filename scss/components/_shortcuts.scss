@@ -1,0 +1,95 @@
+.shortcuts {
+    display: none;
+    &.display{
+        display: block;
+    }
+	position: fixed !important;
+	width: 100%;
+	height: 100vh;
+	z-index: 4;
+	backdrop-filter: blur(10px);
+    &.mozilla{
+        background: $backgroundColor;
+    }
+    @media (max-width: $md){
+        z-index: 10;
+    }
+	.container {
+		@extend %center;
+		overflow: hidden;
+		height: 80vh;
+		box-shadow: -1px 4px 6px 3px #00000029;
+		background: $backgroundColor;
+		border: solid 7px $titleColor1;
+        transition: $transitionTime;
+        @media (max-width: $sm){
+            height: 102vh;
+        }
+		.container2 {
+			@extend %center;
+			width: 90%;
+			height: 90%;
+		}
+	}
+	.title {
+        @extend %flex;
+        justify-content: space-between;
+		&::after {
+			width: 100%;
+		}
+	}
+    section{
+        @extend %flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        height: 90%;
+        .right,.left{
+            width: 47%;
+            height: 100%;
+            display: grid;
+            grid-template-rows: repeat(7,1fr);
+            align-items: center;
+            @media (max-width: $sm){
+                width: 100%;
+                height: 100% / (7+4) * 7;
+            }
+        }
+        .left{
+            @media (max-width: $sm){
+                grid-template-rows: repeat(4,1fr) !important;
+                height: 100% / (7+4) * 4 !important;
+            }
+        }
+        .row{
+            @extend %flex;
+            justify-content: space-between;
+            .keys{
+                @extend %flex;
+                span, b{
+                    font-size: $fs2;
+                    line-height: 28px;
+                    display: inline-block;
+                    text-align: center;
+                    height: 30px;
+                    margin-left: 5px;
+                    user-select: none;
+                }
+                span{
+                    color: $white;
+                    background: #262A2B;
+                    border: 1px solid $paragraphColor;
+                    width: 30px;
+                }
+                b{
+                    color: $paragraphColor;
+                    width: 10px;
+                }
+            }
+        }
+        h3{
+            font-size: $fs2;
+            color: $paragraphColor;
+            line-height: calc(100% + #{$fs2});
+        }
+    }
+}

@@ -1,13 +1,37 @@
 let tabletWidth = "799px", mainTransition = 700, big,
     transition1 = mainTransition, page = 0, i, lastKey;
-let pagesId = ["header", "learnmore", "aboutUs", "contactUs", "footer"]
+let pagesId = ["#header", "#learnmore", "#aboutUs", "#contactUs", "#adresses", "#footer", "javascript:shortcutsDisplay()"]
 let urls = document.querySelectorAll(".navigation nav ul li a");
 const theme = localStorage.getItem('theme');
-
-if (window.getComputedStyle(filter, null).getPropertyValue("backdrop-filter") != "blur(10px)"){
+//if the browser dont support backfrop-filter
+//then he will use a background color
+if (window.getComputedStyle(filter, null).getPropertyValue("backdrop-filter") != "blur(10px)") {
     icon.classList.toggle("mozilla");
+    shortcuts.classList.toggle("mozilla");
 }
+// responsive header
+window.onload = function () {
+    if (window.matchMedia(`(max-width: ${tabletWidth})`).matches) {
+        big = false;
+    }
+    else {
+        big = true;
+    }
+    MQ_799px();
+}
+function MQ_799px() {
+    // if screen >= tabletwidth
+    if (window.matchMedia("(max-width: " + tabletWidth + ")").matches && !big) {
+        box.appendChild(headerImg);
+        big = true;
+    } else if (window.matchMedia("(min-width: " + tabletWidth + ")").matches && big) {
+        course.appendChild(headerImg);
+        big = false;
+    };
+}
+window.onresize = MQ_799px;
 
+// function to show/hide the menu
 function menuDisplay() {
     icon.classList.toggle("change");
     setTimeout(
@@ -23,40 +47,50 @@ function menuDisplay() {
     );
 }
 for (i = 0; i < urls.length; i++) {
-    urls[i].onclick = menuDisplay;
+    urls[i].onclick = function () {
+        menuDisplay();
+        if (i != 4) {
+            shortcuts.classList.remove("display");
+        }
+    }
 }
-window.onload = function () {
-    if (window.matchMedia(`(max-width: ${tabletWidth})`).matches) {
-        big = false;
+// show/hide shortcuts page
+function shortcutsDisplay(){
+    shortcuts.classList.toggle("display");
+}
+//change between themes and creating a local storage
+function changeTheme() {
+    if (document.body.classList.value == "whiteTheme") {
+        blackTheme();
     }
     else {
-        big = true;
+        whiteTheme();
     }
-    MQ_799px();
+    localStorage.setItem("theme", document.body.classList.value);
 }
-function MQ_799px(){
-    // if screen >= tabletwidth
-    if (window.matchMedia("(max-width: " + tabletWidth + ")").matches && !big) {
-        box.appendChild(headerImg);
-        big = true;
-    } else if (window.matchMedia("(min-width: " + tabletWidth + ")").matches && big) {
-        course.appendChild(headerImg);
-        big = false;
-    };
+function whiteTheme() {
+    document.body.classList.replace("blackTheme", "whiteTheme");
 }
-window.onresize = MQ_799px;
+function blackTheme() {
+    document.body.classList.replace("whiteTheme", "blackTheme");
+}
+if (theme) {
+    window[theme]();
+}
+switchTheme.onclick = changeTheme;
+//create keyboard shortcuts
 window.addEventListener("keydown", function (e) {
     if (!e.target.form) {
         if (["Space"].indexOf(e.code) > -1) {
             e.preventDefault();
         }
-        else if(e.code == "KeyT"){
+        else if (e.code == "KeyT") {
             console.log(e.code);
             changeTheme();
         }
         else if (e.code == "Tab") {
-                e.preventDefault();
-                menuDisplay();
+            e.preventDefault();
+            menuDisplay();
         }
         else if (e.code == "ArrowUp" || e.code == "ArrowLeft") {
             e.preventDefault();
@@ -90,26 +124,5 @@ function upDown(n) {
     goHref(page)
 }
 function goHref(n) {
-    window.location.href = "#" + pagesId[n];
-}
-//change between themes and creating a local storage
-if (theme ) {
-    window[theme]();
-}
-switchTheme.onclick = changeTheme;
-
-function changeTheme(){
-    if (document.body.classList.value == "whiteTheme") {
-        blackTheme();
-    }
-    else{
-        whiteTheme();
-    }
-    localStorage.setItem("theme", document.body.classList.value);
-}
-function whiteTheme(){
-    document.body.classList.replace("blackTheme","whiteTheme");
-}
-function blackTheme(){
-    document.body.classList.replace("whiteTheme","blackTheme");
+    window.location.href = pagesId[n];
 }
