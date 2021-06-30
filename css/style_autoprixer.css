@@ -131,6 +131,7 @@ header .box {
 		-webkit-box-align: center;
 		-ms-flex-align: center;
 		align-items: center;
+		width: 100%;
 	}
 }
 
@@ -1470,10 +1471,9 @@ body.blackTheme .theme .circle {
 	-webkit-transition: 0.7s ease-in-out;
 	-o-transition: 0.7s ease-in-out;
 	transition: 0.7s ease-in-out;
-	background-color: var(--titleColor1) !important;
+	background: var(--titleColor1) !important;
 	position: absolute;
-	border: 3px solid var(--titleColor1);
-	position: absolute;
+	height: 6px;
 	left: 0;
 	bottom: -19px;
 }

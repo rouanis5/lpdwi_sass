@@ -26,10 +26,9 @@
     &::after {
         content: "";
 		transition: $transitionTime;
-        background-color: $titleColor1 !important;
+        background: $titleColor1 !important;
         position: absolute;
-        border: 3px solid $titleColor1;
-        position: absolute;
+		height: 6px;
         left: 0;
 		bottom: -19px;
         @media (max-width: $md) {

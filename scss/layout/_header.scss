@@ -28,6 +28,7 @@ header {
 		flex-direction: column;
 		@media (max-width: $md) {
             align-items: center;
+			width: 100%;
 		}
 	}
 	.title {
