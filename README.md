@@ -1,10 +1,22 @@
 <h1>LPDWI SASS COURSE</h1>
 Link: https://rouanis5.github.io/lpdwi_sass/
-<img src="" alt="LPDWI SASS COURSE website in different screens">
+<img src="https://rouanis5.github.io/lpdwi_sass/images/readme.jpg" alt="LPDWI SASS COURSE website in different screens">
 
 <h2>Why we developed this website</h2>
 <img src="https://rouanis5.github.io/lpdwi_sass/images/img1.png" alt="">
+UI/UX design:
+https://xd.adobe.com/view/c2ec2825-6c7f-4a47-8974-c6916bb4ad92-97bf/
 projet tuteuré 1 2020/2021
+<h2>Thanks to</h2>
+http://lpdwi.univ-boumerdes.dz/
+
+https://autoprefixer.github.io/
+
+https://cssminifier.com/
+
+https://javascript-minifier.com/
+
+https://tinypng.com/
 <h2>MIT License</h2>
 
 Copyright (c) 2021 rouanis5
