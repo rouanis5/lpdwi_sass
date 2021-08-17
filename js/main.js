@@ -2,7 +2,7 @@ let tabletWidth = "799px", mainTransition = 700, big,
     transition1 = mainTransition, page = 0, i, lastKey;
 let pagesId = ["#header", "#learnmore", "#aboutUs", "#contactUs", "#adresses", "#footer", "javascript:shortcutsDisplay()"]
 let urls = document.querySelectorAll(".navigation nav ul li a");
-const theme = localStorage.getItem('theme');
+const theme = localStorage.getItem('themeSC21');
 //if the browser dont support backfrop-filter
 //then he will use a background color
 if (window.getComputedStyle(filter, null).getPropertyValue("backdrop-filter") != "blur(10px)") {
@@ -61,21 +61,15 @@ function shortcutsDisplay(){
 //change between themes and creating a local storage
 function changeTheme() {
     if (document.body.classList.value == "whiteTheme") {
-        blackTheme();
+        document.body.classList.value = "blackTheme";
     }
     else {
-        whiteTheme();
+        document.body.classList.value = "whiteTheme";
     }
-    localStorage.setItem("theme", document.body.classList.value);
-}
-function whiteTheme() {
-    document.body.classList.replace("blackTheme", "whiteTheme");
-}
-function blackTheme() {
-    document.body.classList.replace("whiteTheme", "blackTheme");
+    localStorage.setItem("themeSC21", document.body.classList.value);
 }
 if (theme) {
-    window[theme]();
+    document.body.classList.value = theme;
 }
 switchTheme.onclick = changeTheme;
 //create keyboard shortcuts
