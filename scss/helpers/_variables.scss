@@ -2,26 +2,6 @@ $transitionTime: 0.7s ease-in-out;
 $colorbarH: 5px;
 
 body {
-	&.whiteTheme {
-		--white: #fff;
-		--primaryColorS: 255, 187, 236;
-		--mainCyanS: 169, 201, 255;
-		--backgroundColor: var(--white);
-		--other: #262a2b;
-		--titleColor1S: 255, 114, 185;
-		--paragraphColor: #707070;
-		--circleColor: #ffefad;
-		--cardColor: var(--white);
-		--cardColor1: #afc8fe;
-		--cardColor2: #18d0e9;
-		--cardColor3: #ffc730;
-		--cardColor4: #fda57a;
-		--aboutusColor: url(../images/img3.jpg);
-		--formColor: var(--white);
-		--formFontColor: unset;
-		--contactBg: #ffe4f1;
-		--svg: url(../images/formW.svg);
-	}
 	&.blackTheme {
 		--white: #d0ccc5;
 		--primaryColorS: 114, 25, 70;
@@ -44,9 +24,29 @@ body {
 	}
 	--primaryColor: rgb(var(--primaryColorS));
 	--titleColor1: rgb(var(--titleColor1S));
-	--mainCyan: rgb(var(--mainCyanS));
+	--mainCyan: rgb(var(--mainCyanS))
 }
 :root {
+	--white: #fff;
+	--primaryColorS: 255, 187, 236;
+	--mainCyanS: 169, 201, 255;
+	--backgroundColor: var(--white);
+	--other: #262a2b;
+	--titleColor1S: 255, 114, 185;
+	--paragraphColor: #707070;
+	--circleColor: #ffefad;
+	--cardColor: var(--white);
+	--cardColor1: #afc8fe;
+	--cardColor2: #18d0e9;
+	--cardColor3: #ffc730;
+	--cardColor4: #fda57a;
+	--aboutusColor: url(../images/img3.jpg);
+	--formColor: var(--white);
+	--formFontColor: unset;
+	--contactBg: #ffe4f1;
+	--svg: url(../images/formW.svg);
+	
+		///
 	--cardfont: var(--fontsize2);
 	--footerfont: var(--fontsize2);
 	--fontsize1: 15.5px;
@@ -99,16 +99,3 @@ $md: 799px;
 $sm: 576px;
 $screens: ($xl: 1014px, $lg:769px, $md:480px, $sm:352px);
 // $screens: ($xl: 1014px, $lg:789px, $md:480px, $sm:352px);
-* {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-	-webkit-tap-highlight-color: transparent;
-}
-html {
-	scroll-behavior: smooth;
-}
-body {
-	font-family: 'Lato', sans-serif;
-	background: $backgroundColor;
-}

@@ -1,21 +1,9 @@
 .content2 {
-	border: 3px solid $paragraphColor;
-	height: clamp(730px,100vh,900px);
 	border-left: none;
-	border-right: none;
-	overflow: hidden;
-	position: relative;
+	padding: clamp(20px,#{$h-white},62px) 0;
 	@media (max-width: $md) {
-		border: none;
-		height: unset;
 		.image{
 			display: none;
-		}
-	}
-	.container {
-		margin: auto;
-		@media (min-width: $md){
-			@include center;
 		}
 	}
 	.right {
@@ -24,34 +12,19 @@
 		@media (max-width: $md) {margin: 0;}
 	}
 	.image {
-		@include weth(530px, 600px);
-		position: relative;
-		left: 0;
+		min-height: 400px;
+		width: 500px;
 		background: transparent url("../images/img2.jpg") no-repeat padding-box;
 		background-size: cover;
-		&::before {
-			content: "";
-			position: absolute;
-			background-color: $primaryColor;
-			@include weth(1500px,799px);
-			right: 38.7%;
-			@extend %center-y;
-			z-index: -1;
-		}
 	}
 	.title::after {
 		width: 100%;
 	}
 	p {
-		width: 327px;
 		font-size: $fs2;
 		line-height: 23px;
 		color: $paragraphColor;
 		text-align: justify;
-		margin: 39px 22px 38px 0;
-		@media (max-width: $md) {
-			width: 100%;
-			margin: 39px 0;
-		}
+		margin:38px 0;
 	}
 }
