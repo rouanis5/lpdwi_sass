@@ -1,16 +1,19 @@
-
+body.blackTheme header{
+	background: $contactBg;
+}
 header {
-	@extend %mygradient0;
-	position: relative;
+	background: linear-gradient(13deg,#A88EE5,#FEA1F1,#336ED6);
 	overflow: hidden;
 	height: clamp(545px,calc(100vh - #{$h-white}),730px);
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	@media (max-width: $md){
 		min-height: 750px;
         height: 98vh;
 		max-height: 900px;
 	}
 	.container {
-		@extend %center;
 		z-index: 3;
 	}
 	.course {
@@ -46,7 +49,7 @@ header {
 		}
         h1,h2{
 			margin: 0;
-            transition: $transitionTime;
+            transition: $transitionTime, color 0;
         }
 	}
 	p {
