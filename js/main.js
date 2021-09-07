@@ -1,18 +1,38 @@
-let tabletWidth = "799px", mainTransition = 700, big,
-    transition1 = mainTransition, i, lastKey;
+let tabletWidth = "799px",
+    mainTransition = 700,
+    big,
+    transition1 = mainTransition,
+    i,
+    lastKey;
 let parents = document.querySelectorAll(".parent");
 let urls = document.querySelectorAll(".navigation li a");
 let ScrollingSpeed = 750 / 1000; //750px per second
 let scrollAnimation;
 let onScrolling;
 let page;
-const theme = localStorage.getItem('themeSC21');
+const theme = localStorage.getItem("themeSC21");
 
 let faders = document.querySelectorAll(".fade-in");
 let sliders = document.querySelectorAll(".slide-in");
+
+let icon = document.getElementById("icon");
+let shortcuts = document.getElementById("shortcuts");
+let loading = document.getElementById("loading");
+let box = document.getElementById("box");
+let course = document.getElementById("course");
+let menu = document.getElementById("menu");
+let shortcutsA = document.getElementById("shortcutsA");
+let switchTheme = document.getElementById("switchTheme");
+let shortcutsH3 = document.getElementById("shortcutsH3");
+let learnMoreBtn = document.getElementById("learnMoreBtn");
+let headerImg = document.getElementById("headerImg");
+
 //if the browser dont support backfrop-filter
 //then he will use a background color
-if (window.getComputedStyle(filter, null).getPropertyValue("backdrop-filter") != "blur(10px)") {
+if (
+    window.getComputedStyle(filter, null).getPropertyValue("backdrop-filter") !=
+    "blur(10px)"
+) {
     icon.classList.toggle("mozilla");
     shortcuts.classList.toggle("mozilla");
 }
@@ -26,8 +46,7 @@ window.onload = function () {
     ////
     if (window.matchMedia(`(max-width: ${tabletWidth})`).matches) {
         big = false;
-    }
-    else {
+    } else {
         big = true;
     }
     MQ_799px();
@@ -42,7 +61,7 @@ window.onload = function () {
             sliders[i].classList.add("appear");
         }
     }
-}
+};
 function MQ_799px() {
     // if screen >= tabletwidth
     if (window.matchMedia("(max-width: " + tabletWidth + ")").matches && !big) {
@@ -51,24 +70,21 @@ function MQ_799px() {
     } else if (window.matchMedia("(min-width: " + tabletWidth + ")").matches && big) {
         course.appendChild(headerImg);
         big = false;
-    };
+    }
 }
 window.onresize = MQ_799px;
 
 // function to show/hide the menu
 function menuDisplay() {
     icon.classList.toggle("change");
-    setTimeout(
-        function () {
-            if (transition1 === 700) {
-                transition1 = 0;
-            }
-            else if (transition1 === 0) {
-                transition1 = 700;
-            }
-            menu.classList.toggle("display");
-        }, transition1
-        );
+    setTimeout(function () {
+        if (transition1 === 700) {
+            transition1 = 0;
+        } else if (transition1 === 0) {
+            transition1 = 700;
+        }
+        menu.classList.toggle("display");
+    }, transition1);
 }
 for (i = 0; i < urls.length; i++) {
     urls[i].onclick = function () {
@@ -76,13 +92,12 @@ for (i = 0; i < urls.length; i++) {
         if (this !== shortcutsA) {
             shortcuts.classList.remove("display");
             goLocationByDataId(this);
-        }
-        else{
+        } else {
             shortcutsDisplay();
         }
-    }
+    };
 }
-function goLocationByDataId(e){
+function goLocationByDataId(e) {
     let id = e.getAttribute("data-id");
     if (id) {
         let link = document.getElementById(id);
@@ -90,15 +105,14 @@ function goLocationByDataId(e){
     }
 }
 // show/hide shortcuts page
-function shortcutsDisplay(){
+function shortcutsDisplay() {
     shortcuts.classList.toggle("display");
 }
 //change between themes and creating a local storage
 function changeTheme() {
     if (document.body.classList.value == "whiteTheme") {
         document.body.classList.value = "blackTheme";
-    }
-    else {
+    } else {
         document.body.classList.value = "whiteTheme";
     }
     localStorage.setItem("themeSC21", document.body.classList.value);
@@ -108,47 +122,49 @@ if (theme) {
 }
 switchTheme.onclick = changeTheme;
 //create keyboard shortcuts
-window.addEventListener("keydown", function (e) {
-    if (!e.target.form) {
-        if (e.code.includes("Arrow")) {
-            e.preventDefault();
-            page = setPage();
-            if ((e.code === "ArrowUp" || e.code === "ArrowLeft") && page !== 0) {
-                goLocation(parents[--page]);
-            } else if (
-                (e.code === "ArrowDown" || e.code === "ArrowRight") &&
-                page !== parents.length - 1
-            ) {
-                goLocation(parents[++page]);
-            }
-        } else if (e.code === "Space") {
-            if (onScrolling) {
+window.addEventListener(
+    "keydown",
+    function (e) {
+        if (!e.target.form) {
+            if (e.code.includes("Arrow")) {
                 e.preventDefault();
-                cancelAnimationFrame(scrollAnimation);
-                onScrolling = false;
-            }
-        }
-        else if (e.code == "KeyT") {
-            e.preventDefault();
-            changeTheme();
-        }
-        else if (e.code == "Tab") {
-            e.preventDefault();
-            menuDisplay();
-        }
-    }
-    
-    if (lastKey == "Alt") {
-        for (i = 1; i <= parents.length; i++) {
-            if (parseInt(e.key) === i) {
+                page = setPage();
+                if ((e.code === "ArrowUp" || e.code === "ArrowLeft") && page !== 0) {
+                    goLocation(parents[--page]);
+                } else if (
+                    (e.code === "ArrowDown" || e.code === "ArrowRight") &&
+                    page !== parents.length - 1
+                ) {
+                    goLocation(parents[++page]);
+                }
+            } else if (e.code === "Space") {
+                if (onScrolling) {
+                    e.preventDefault();
+                    cancelAnimationFrame(scrollAnimation);
+                    onScrolling = false;
+                }
+            } else if (e.code == "KeyT") {
                 e.preventDefault();
-                let go = i - 1;
-                goLocation(parents[go])
+                changeTheme();
+            } else if (e.code == "Tab") {
+                e.preventDefault();
+                menuDisplay();
             }
         }
-    }
-    lastKey = e.key;
-}, false);
+
+        if (lastKey == "Alt") {
+            for (i = 1; i <= parents.length; i++) {
+                if (parseInt(e.key) === i) {
+                    e.preventDefault();
+                    let go = i - 1;
+                    goLocation(parents[go]);
+                }
+            }
+        }
+        lastKey = e.key;
+    },
+    false
+);
 icon.onclick = menuDisplay;
 shortcutsH3.onclick = shortcutsDisplay;
 
@@ -224,6 +240,6 @@ sliders.forEach((slider) => {
 //test if IntersectionObserver is working
 appearOnScroll.observe(icon);
 //go to learnMore page
-learnMoreBtn.onclick = function(){
-    goLocationByDataId(this)
-}
+learnMoreBtn.onclick = function () {
+    goLocationByDataId(this);
+};
