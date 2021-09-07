@@ -1,8 +1,7 @@
 let tabletWidth = "799px", mainTransition = 700, big,
     transition1 = mainTransition, i, lastKey;
 let parents = document.querySelectorAll(".parent");
-// let pagesId = ["#header", "#learnmore", "#aboutUs", "#contactUs", "#adresses", "#footer", "javascript:shortcutsDisplay()"]
-let urls = document.querySelectorAll(".navigation nav ul li a");
+let urls = document.querySelectorAll(".navigation li a");
 let ScrollingSpeed = 750 / 1000; //750px per second
 let scrollAnimation;
 let onScrolling;
@@ -49,13 +48,21 @@ function menuDisplay() {
             }
             menu.classList.toggle("display");
         }, transition1
-    );
+        );
 }
 for (i = 0; i < urls.length; i++) {
     urls[i].onclick = function () {
         menuDisplay();
-        if (i != 4) {
+        if (this !== shortcutsA) {
             shortcuts.classList.remove("display");
+            let id = this.getAttribute("data-id");
+            if (id) {
+                let link = document.getElementById(id);
+                goLocation(link);
+            }
+        }
+        else{
+            shortcutsDisplay();
         }
     }
 }
@@ -109,10 +116,11 @@ window.addEventListener("keydown", function (e) {
     }
     
     if (lastKey == "Alt") {
-        for (i = 0; i <= parents.length; i++) {
+        for (i = 1; i <= parents.length; i++) {
             if (parseInt(e.key) === i) {
                 e.preventDefault();
-                goLocation(parents[i])
+                let go = i - 1;
+                goLocation(parents[go])
             }
         }
     }
@@ -120,7 +128,6 @@ window.addEventListener("keydown", function (e) {
 }, false);
 icon.onclick = menuDisplay;
 shortcutsH3.onclick = shortcutsDisplay;
-shortcutsA.onclick = shortcutsDisplay;
 
 //set page index
 page = 0;

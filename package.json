@@ -6,7 +6,7 @@
   "scripts": {
     "start": "rm -rf dist && parcel ./index.html",
     "build": "rm -rf dist && parcel build ./index.html --public-url ./",
-    "buildForWeb": "rm -rf dist && parcel build ./index.html --public-url https://rouanis5.github.io/password-generator/",
+    "buildForWeb": "rm -rf dist && parcel build ./index.html --public-url https://rouanis5.github.io/lpdwi_sass/",
     "deploy": "npm run buildForWeb && gh-pages -d dist"
   },
   "devDependencies": {
