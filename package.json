@@ -1,0 +1,33 @@
+{
+  "name": "lpdwi_sass",
+  "version": "1.0.0",
+  "description": "<h1>LPDWI SASS COURSE</h1> Link: https://rouanis5.github.io/lpdwi_sass/ <img src=\"https://rouanis5.github.io/lpdwi_sass/images/readme.jpg\" alt=\"LPDWI SASS COURSE website in different screens\">",
+  "main": "index.js",
+  "scripts": {
+    "start": "rm -rf dist && parcel ./index.html",
+    "build": "rm -rf dist && parcel build ./index.html --public-url ./",
+    "buildForWeb": "rm -rf dist && parcel build ./index.html --public-url https://rouanis5.github.io/lpdwi_sass/",
+    "deploy": "npm run buildForWeb && gh-pages -d dist"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/plugin-transform-runtime": "^7.15.0",
+    "@fortawesome/fontawesome-free": "^5.15.3",
+    "gh-pages": "^3.2.3",
+    "normalize.css": "^8.0.1",
+    "parcel-bundler": "^1.12.5",
+    "postcss-preset-env": "^6.7.0",
+    "sass": "^1.35.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rouanis5/lpdwi_sass.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rouanis5/lpdwi_sass/issues"
+  },
+  "homepage": "https://github.com/rouanis5/lpdwi_sass#readme"
+}

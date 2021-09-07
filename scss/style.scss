@@ -1,5 +1,11 @@
 @import './helpers/variables';
+@import './helpers/init';
 @import './helpers/mixins';
+//components
+@import './components/scrollbar';
+@import './components/loading';
+@import './components/shortcuts';
+@import './components/menu';
 
 //layouts
 @import './layout/header';
@@ -10,6 +16,4 @@
 @import './layout/footer';
 
 //extends and general classes
-@import './components/shortcuts';
-@import './components/menu';
 @import './helpers/extends';
