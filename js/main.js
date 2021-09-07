@@ -75,15 +75,18 @@ for (i = 0; i < urls.length; i++) {
         menuDisplay();
         if (this !== shortcutsA) {
             shortcuts.classList.remove("display");
-            let id = this.getAttribute("data-id");
-            if (id) {
-                let link = document.getElementById(id);
-                goLocation(link);
-            }
+            goLocationByDataId(this);
         }
         else{
             shortcutsDisplay();
         }
+    }
+}
+function goLocationByDataId(e){
+    let id = e.getAttribute("data-id");
+    if (id) {
+        let link = document.getElementById(id);
+        goLocation(link);
     }
 }
 // show/hide shortcuts page
@@ -220,3 +223,7 @@ sliders.forEach((slider) => {
 });
 //test if IntersectionObserver is working
 appearOnScroll.observe(icon);
+//go to learnMore page
+learnMoreBtn.onclick = function(){
+    goLocationByDataId(this)
+}
