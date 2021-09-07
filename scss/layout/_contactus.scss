@@ -6,7 +6,11 @@ body.whiteTheme .contactUs::before{
 .contactUs {
 	position: relative;
 	overflow: hidden;
-	height: clamp(684px, 100vh, 900px);
+	//height --------//
+	min-height: 684px;
+	height: 100vh;
+	max-height: 900px;
+	//--------------//
 	@media (max-width: $md) {
 		height: unset;
 		.container{

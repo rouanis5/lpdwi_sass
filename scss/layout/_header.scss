@@ -4,7 +4,11 @@ body.blackTheme header{
 header {
 	background: linear-gradient(13deg,#A88EE5,#FEA1F1,#336ED6);
 	overflow: hidden;
-	height: clamp(545px,calc(100vh - #{$h-white}),730px);
+	//height-------//
+	min-height: 545px;
+	height: calc(100vh - #{$h-white});
+	max-height: 730px;
+	//------------//
 	display: flex;
 	justify-content: center;
 	align-items: center;
