@@ -44,6 +44,29 @@ a {
 	z-index: -50;
 	position: absolute;
 }
+.fade-in {
+    opacity: 0;
+    transition: opacity $transitionTime;
+    &.appear {
+        opacity: 1;
+    }
+}
+@media (min-width: $lg){
+	.from-left {
+		transform: translateX(-50%);
+	}
+	.from-right {
+		transform: translateX(50%);
+	}
+}
+.slide-in {
+    opacity: 0;
+    transition: transform $transitionTime, opacity $transitionTime;
+    &.appear {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
 %mygradient0{
 	@include myGradient(109deg,0%)
 }

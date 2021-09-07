@@ -7,6 +7,9 @@ let scrollAnimation;
 let onScrolling;
 let page;
 const theme = localStorage.getItem('themeSC21');
+
+let faders = document.querySelectorAll(".fade-in");
+let sliders = document.querySelectorAll(".slide-in");
 //if the browser dont support backfrop-filter
 //then he will use a background color
 if (window.getComputedStyle(filter, null).getPropertyValue("backdrop-filter") != "blur(10px)") {
@@ -28,6 +31,17 @@ window.onload = function () {
         big = true;
     }
     MQ_799px();
+    //test if the IntersectionObserver is working
+    if (icon.classList.contains("appear")) {
+        return;
+    } else {
+        for (let i = 0; i < faders.length; i++) {
+            faders[i].classList.add("appear");
+        }
+        for (let i = 0; i < sliders.length; i++) {
+            sliders[i].classList.add("appear");
+        }
+    }
 }
 function MQ_799px() {
     // if screen >= tabletwidth
@@ -184,3 +198,25 @@ function goLocation(target, duration = null) {
     }
     scrollAnimation = requestAnimationFrame(animation);
 }
+//create fade-in animation
+const appearOptions = {
+    threshold: 0.5,
+};
+const appearOnScroll = new IntersectionObserver(function (entries, appearOnScroll) {
+    entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+            return;
+        } else {
+            entry.target.classList.add("appear");
+            appearOnScroll.unobserve(entry.target);
+        }
+    });
+}, appearOptions);
+faders.forEach((fader) => {
+    appearOnScroll.observe(fader);
+});
+sliders.forEach((slider) => {
+    appearOnScroll.observe(slider);
+});
+//test if IntersectionObserver is working
+appearOnScroll.observe(icon);
