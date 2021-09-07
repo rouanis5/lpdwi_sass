@@ -10,8 +10,6 @@ header {
 	max-height: 730px;
 	//------------//
 	display: flex;
-	justify-content: center;
-	align-items: center;
 	@media (max-width: $md){
 		min-height: 750px;
         height: 98vh;
@@ -19,12 +17,9 @@ header {
 	}
 	.container {
 		z-index: 3;
-	}
-	.course {
         @extend %flex;
 		justify-content: space-around;
 		align-items: center;
-		width: 100%;
 		z-index: 3;
 		@media (max-width: $md) {
             flex-direction: column;
