@@ -7,9 +7,12 @@
 			display: none;
 		}
 	}
+	.flex{
+		align-items: center;
+	}
 	.right {
 		width: 788px;
-		margin: auto 48px;
+		margin-left: 48px;
 		@media (max-width: $md) {margin: 0;}
 	}
 	.image {
@@ -27,5 +30,8 @@
 		color: $paragraphColor;
 		text-align: justify;
 		margin:38px 0;
+	}
+	p.last{
+		margin-bottom: 0;
 	}
 }

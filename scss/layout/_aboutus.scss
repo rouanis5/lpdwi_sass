@@ -112,7 +112,9 @@
 		}
 	}
 	@media (max-width: $cardWidth + 30){
-		width: 90%
+		aspect-ratio: unset;
+		width: 90%;
+		min-height: 260px;
 	}
 	@for $i from 1 through length($cardColors) {
 		&:nth-of-type(#{$i}) {
