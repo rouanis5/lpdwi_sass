@@ -15,6 +15,12 @@ if (window.getComputedStyle(filter, null).getPropertyValue("backdrop-filter") !=
 }
 // responsive header
 window.onload = function () {
+    //loading animation
+    loading.classList.add("fade-in");
+    setTimeout(() => {
+        loading.classList.add("hide");
+    }, mainTransition);
+    ////
     if (window.matchMedia(`(max-width: ${tabletWidth})`).matches) {
         big = false;
     }
