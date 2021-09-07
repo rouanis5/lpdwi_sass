@@ -27,6 +27,10 @@ body {
 	--mainCyan: rgb(var(--mainCyanS))
 }
 :root {
+	--primaryColor: rgb(var(--primaryColorS));
+	--titleColor1: rgb(var(--titleColor1S));
+	--mainCyan: rgb(var(--mainCyanS));
+	////
 	--white: #fff;
 	--primaryColorS: 255, 187, 236;
 	--mainCyanS: 169, 201, 255;
