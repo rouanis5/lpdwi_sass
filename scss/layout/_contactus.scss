@@ -4,15 +4,18 @@ body.whiteTheme .contactUs::before{
 	}
 }
 .contactUs {
-	position: relative;
-	overflow: hidden;
 	//height --------//
 	min-height: 684px;
 	height: 100vh;
 	max-height: 900px;
 	//--------------//
+	@extend %flex;
+	justify-content: center;
+	align-items: center;
 	@media (max-width: $md) {
-		height: unset;
+		min-height: initial;
+		height: initial;
+		max-height: initial;
 		.container{
 			margin: 30px auto;
 		}
@@ -37,7 +40,6 @@ body.whiteTheme .contactUs::before{
 	.container {
 		@extend %flex;
 		align-items: center;
-		height: inherit;
 		@media (max-width: $md) {
 			flex-direction: column;
 			justify-content: space-around;
