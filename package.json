@@ -1,7 +1,7 @@
 {
   "name": "lpdwi_sass",
   "version": "1.0.0",
-  "description": "<h1>LPDWI SASS COURSE</h1> Link: https://rouanis5.github.io/lpdwi_sass/ <img src=\"https://rouanis5.github.io/lpdwi_sass/images/readme.jpg\" alt=\"LPDWI SASS COURSE website in different screens\">",
+  "description": "LPDWI SASS COURSE website in different screens",
   "main": "index.js",
   "scripts": {
     "start": "rm -rf dist && parcel ./index.html",

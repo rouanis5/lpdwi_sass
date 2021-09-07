@@ -48,7 +48,7 @@
 	}
 }
 .card {
-	transition: $transitionTime;
+	transition: $transitionTime !important;
 	background: $cardColor;
 	overflow: hidden;
 	border: 6px solid;

@@ -20,11 +20,6 @@
         margin-top: 50px;
         color: $titleColor1;
     }
-    opacity: 1;
-    transition: opacity $transitionTime;
-    &.fade-in{
-        opacity: 0;
-    }
     &.hide{
         display: none;
     }
