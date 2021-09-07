@@ -4,6 +4,7 @@ body.whiteTheme .contactUs::before{
 	}
 }
 .contactUs {
+	overflow: hidden;
 	//height --------//
 	min-height: 684px;
 	height: 100vh;
