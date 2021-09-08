@@ -37,6 +37,7 @@ body.whiteTheme .contactUs::before{
 		}
 	}
 	.container {
+		margin: 0 !important;
 		@include flex(null,center){
 			@media (max-width: $md) {
 				flex-direction: column;
