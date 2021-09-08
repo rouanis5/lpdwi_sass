@@ -4,9 +4,7 @@ footer {
 	font-weight: 800;
 	background: $titleColor1;
 	.container {
-		@extend %flex;
-		justify-content: space-between;
-		align-items: center;
+		@include flex(space-between,center);
 		height: 50px + $colorbarH;
 		color:$titleColor2;
 	}

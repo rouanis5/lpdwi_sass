@@ -128,13 +128,12 @@ body.blackTheme .theme{
 		right: 55px;
 	}
 	ul {
-		@extend %flex;
+		@include flex(space-around,center){
+			flex-direction: column;
+			flex-wrap: wrap;
+		}
 		$aPadding: 10px 30px;
 		height: $heightnav - 14;
-		flex-direction: column;
-		justify-content: space-around;
-		align-items: center;
-		flex-wrap: wrap;
 		li {
 			list-style: none;
 			a {

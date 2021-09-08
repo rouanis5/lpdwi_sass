@@ -9,7 +9,7 @@ header {
 	height: calc(100vh - #{$h-white});
 	max-height: 730px;
 	//------------//
-	display: flex;
+	@include flex;
 	@media (max-width: $md){
 		min-height: 750px;
         height: 98vh;
@@ -17,17 +17,16 @@ header {
 	}
 	.container {
 		z-index: 3;
-        @extend %flex;
-		justify-content: space-around;
-		align-items: center;
+		@include flex(space-around,center);
 		z-index: 3;
 		@media (max-width: $md) {
             flex-direction: column;
 		}
 	}
 	.box {
-        @extend %flex;
-		flex-direction: column;
+		@include flex{
+			flex-direction: column;
+		}
 		@media (max-width: $md) {
             align-items: center;
 			width: 100%;

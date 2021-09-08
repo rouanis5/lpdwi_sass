@@ -2,12 +2,11 @@
     width: 100%;
     height: 100vh;
     background:$backgroundColor;
-    display: flex;
     position: fixed;
     z-index: 100;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+    @include flex(center){
+        flex-direction: column;
+    }
     .circle {
         width: 100px;
         height: 100px;

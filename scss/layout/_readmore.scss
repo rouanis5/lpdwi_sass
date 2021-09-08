@@ -7,8 +7,8 @@
 			display: none;
 		}
 	}
-	.flex{
-		align-items: center;
+	.container{
+		@include flex(null,center);
 	}
 	.right {
 		width: 788px;

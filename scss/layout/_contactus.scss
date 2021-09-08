@@ -10,9 +10,7 @@ body.whiteTheme .contactUs::before{
 	height: 100vh;
 	max-height: 900px;
 	//--------------//
-	@extend %flex;
-	justify-content: center;
-	align-items: center;
+	@include flex(center);
 	@media (max-width: $md) {
 		min-height: initial;
 		height: initial;
@@ -39,11 +37,11 @@ body.whiteTheme .contactUs::before{
 		}
 	}
 	.container {
-		@extend %flex;
-		align-items: center;
-		@media (max-width: $md) {
-			flex-direction: column;
-			justify-content: space-around;
+		@include flex(null,center){
+			@media (max-width: $md) {
+				flex-direction: column;
+				justify-content: space-around;
+			}
 		}
 	}
 	.right,
@@ -55,10 +53,8 @@ body.whiteTheme .contactUs::before{
 		}
 	}
 	.left {
-		@extend %flex;
-		flex-direction: column;
+		@include flex(space-between,null,column);
 		height: 300px;
-		justify-content: space-between;
 		@media (max-width: $md){
 			height: unset;
 		}
@@ -102,12 +98,12 @@ body.whiteTheme .contactUs::before{
 				margin: 15px auto;
 			}
 			ul {
-				@extend %flex;
-				justify-content: space-between;
+				@include flex(space-between,null){
+					flex-wrap: wrap;
+				}
 				@media (max-width: $md) {
 					justify-content: space-around;
 				}
-				flex-wrap: wrap;
 				li {
 					list-style-type: none;
 					a {
@@ -164,10 +160,8 @@ body.whiteTheme .contactUs::before{
 				z-index: -1;
 			}
 			.form {
-				@extend %flex;
+				@include flex(space-between,null,column);
 				height: 100%;
-				flex-direction: column;
-				justify-content: space-between;
 			}
 			input,
 			textarea,

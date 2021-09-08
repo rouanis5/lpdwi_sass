@@ -35,16 +35,15 @@
 		}
 	}
 	.title {
-        @extend %flex;
-        justify-content: space-between;
+        @include flex(space-between,null);
 		&::after {
 			width: 100%;
 		}
 	}
     section{
-        @extend %flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
+        @include flex(space-between,null){
+            flex-wrap: wrap;
+        }
         height: 90%;
         .right,.left{
             width: 47%;
@@ -64,10 +63,9 @@
             }
         }
         .row{
-            @extend %flex;
-            justify-content: space-between;
+            @include flex(space-between,null);
             .keys{
-                @extend %flex;
+                @include flex;
                 span, b{
                     font-size: $fs2;
                     line-height: 28px;

@@ -71,9 +71,8 @@ a {
 %mygradient0{
 	@include myGradient(109deg,0%)
 }
-%flex,
 .flex {
-	display: flex;
+	@include flex;
 }
 %parent,
 .parent {
