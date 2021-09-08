@@ -27,7 +27,6 @@ let shortcutsH3 = document.getElementById("shortcutsH3");
 let learnMoreBtn = document.getElementById("learnMoreBtn");
 let headerImg = document.getElementById("headerImg");
 let popup = document.getElementById("popup");
-let popupClose = document.getElementById("popupClose");
 
 let popupBtn = document.querySelectorAll(".popup .buttons > *")
 
@@ -225,6 +224,17 @@ function goLocation(target, duration = null) {
     }
     scrollAnimation = requestAnimationFrame(animation);
 }
+//it wasn't work before, because I write it after the IntersectionObserver
+//go to learnMore page
+learnMoreBtn.onclick = function () {
+    goLocationByDataId(this);
+};
+//popup to go to the password generator
+for (let i = 0; i < popupBtn.length; i++) {
+    popupBtn[i].onclick = function(){
+        popup.classList.remove("active");
+    }
+}
 //create fade-in animation
 const appearOptions = {
     threshold: 0.5,
@@ -247,13 +257,3 @@ sliders.forEach((slider) => {
 });
 //test if IntersectionObserver is working
 appearOnScroll.observe(icon);
-//go to learnMore page
-learnMoreBtn.onclick = function () {
-    goLocationByDataId(this);
-};
-//popup to go to the password generator
-for (let i = 0; i < popupBtn.length; i++) {
-    popupBtn[i].onclick = function(){
-        popup.classList.remove("active");
-    }
-}
