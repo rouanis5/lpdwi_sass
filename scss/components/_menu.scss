@@ -138,6 +138,7 @@ body.blackTheme .theme{
 		li {
 			list-style: none;
 			a {
+				display: inline-block;
 				color: $white;
 				font-size: $fs4;
 				padding: $aPadding;
