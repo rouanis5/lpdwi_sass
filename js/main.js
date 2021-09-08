@@ -26,6 +26,10 @@ let switchTheme = document.getElementById("switchTheme");
 let shortcutsH3 = document.getElementById("shortcutsH3");
 let learnMoreBtn = document.getElementById("learnMoreBtn");
 let headerImg = document.getElementById("headerImg");
+let popup = document.getElementById("popup");
+let popupClose = document.getElementById("popupClose");
+
+let popupBtn = document.querySelectorAll(".popup .buttons > *")
 
 //if the browser dont support backfrop-filter
 //then he will use a background color
@@ -44,6 +48,10 @@ window.onload = function () {
         loading.classList.add("hide");
     }, mainTransition);
     ////
+    //show the popup after 7s
+    setTimeout(() => {
+        popup.classList.add("active");
+    }, 7000);
     if (window.matchMedia(`(max-width: ${tabletWidth})`).matches) {
         big = false;
     } else {
@@ -243,3 +251,9 @@ appearOnScroll.observe(icon);
 learnMoreBtn.onclick = function () {
     goLocationByDataId(this);
 };
+//popup to go to the password generator
+for (let i = 0; i < popupBtn.length; i++) {
+    popupBtn[i].onclick = function(){
+        popup.classList.remove("active");
+    }
+}
