@@ -1,7 +1,7 @@
 .aboutUs {
 	position: relative;
 	width: 100%;
-	@include weth(100%,540px);
+	@include size(100%,540px);
 	@media (max-width: $lg) {
 		height: 408px;
 	}

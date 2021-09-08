@@ -65,12 +65,12 @@ header {
             width: 372px;
 		}
 		@media (max-width: $md) {
-            @include weth(100%,95px);
+            @include size(100%,95px);
 			order: 1;
 		}
 	}
     .img {
-        &,img{@include weth(323px,501px);transition: $transitionTime;}
+        &,img{@include size(323px,501px);transition: $transitionTime;}
         position: relative;
         &:after{
             transition: $transitionTime;
@@ -79,17 +79,17 @@ header {
             @extend .centerY;
             left: 30px;
             z-index: -1;
-            @include weth($radiant,$radiant);
+            @include size($radiant,$radiant);
             background-color: $circleColor;
         }
         @media (max-width: $lg) {
-            &,img{@include weth(244px,378px);}
+            &,img{@include size(244px,378px);}
             &:after{
                 --radiant: 602px;
             }
         }
         @media (max-width: $md) {
-            &,img{@include weth(232px,359px);}
+            &,img{@include size(232px,359px);}
             &:after{
                 left: 50% !important;
                 transform: translate(-50%,-50%) !important;
@@ -97,7 +97,7 @@ header {
             }
         }
         @media (max-width: $sm) {
-            &,img{@include weth(231px,358px)};
+            &,img{@include size(231px,358px)};
             &:after{
                 --radiant: 307px;
             }
