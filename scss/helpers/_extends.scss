@@ -1,3 +1,4 @@
+@use '../variables/flexProperties' as p;
 .container {
     width: 530px+48+563;
     margin-left: auto;
@@ -130,4 +131,12 @@ a {
 		--fontsize5: 35px;
 		--fontsize6: 47px;
 	}
+}
+
+@each $x in p.$justify-content {
+    @each $y in p.$align-items {
+        @each $direction in p.$flex-direction {
+            @include flex-builder($x, $y, $direction);
+        }
+    }
 }
