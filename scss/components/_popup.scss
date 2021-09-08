@@ -41,10 +41,11 @@ body.blackTheme {
             margin-left: 15px;
         }
     }
-    button{
+    button,
+    a {
         min-width: 60px;
         @include mq($md,max){
-            width: 100%;
+            width: 100% !important;
             margin: 0px;
         }
         padding: 7px 0;
@@ -57,19 +58,19 @@ body.blackTheme {
         &:active{
             transform: scale(1.1);
         }
-        &:nth-child(1){
-            background: none;
-            color: inherit;
-            &:hover{
-                text-decoration: underline;
-            }
+    }
+    button{
+        background: none;
+        color: inherit;
+        &:hover{
+            text-decoration: underline;
         }
-        &:nth-child(2){
-            background: $titleColor1;
-            color: $white;
-        }
-        a{
-            color: $white;
-        }
+    }
+    a{
+        background: $titleColor1;
+        color: $white;
+        width: auto;
+        @include flex(center);
+        display: inline-flex !important;
     }
 }
