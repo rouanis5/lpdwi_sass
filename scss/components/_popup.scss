@@ -1,0 +1,75 @@
+@use "sass:math";
+//shortcut popup
+body.blackTheme {
+    .popup{
+        .container {
+            box-shadow: 1px 2px 10px -7px #ffffff9e;
+        }
+    }
+}
+.popup{
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+    bottom: math.div($h-popup, 2);
+    transform: translateY(calc(100% + #{math.div($h-popup, 2)}));
+    transition: transform $trans ease-in;
+    &.ie {
+        display: none;
+    }
+    &.active {
+        transform: translateY(0);
+    }
+    .container{
+        border-bottom: 6px solid $titleColor1;
+        box-shadow: 1px 2px 14px -8px #0000009e;
+        background: $backgroundColor;
+        color: $paragraphColor;
+        padding: 20px;
+        @include flex(space-between,center);
+        @include mq($md,max){
+
+        }
+    }
+    p{
+        font-size: $fs2;
+    }
+    .buttons{
+        margin: -4px;
+        @include mq($md,max){
+            margin: 0px;
+            margin-left: 15px;
+        }
+    }
+    button{
+        min-width: 60px;
+        @include mq($md,max){
+            width: 100%;
+            margin: 0px;
+        }
+        padding: 7px 0;
+        cursor: pointer;
+        outline: none;
+        border: none;
+        margin: 4px;
+        border-radius: $radius;
+        font-weight: 700;
+        &:active{
+            transform: scale(1.1);
+        }
+        &:nth-child(1){
+            background: none;
+            color: inherit;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+        &:nth-child(2){
+            background: $titleColor1;
+            color: $white;
+        }
+        a{
+            color: $white;
+        }
+    }
+}
