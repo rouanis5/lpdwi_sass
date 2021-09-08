@@ -52,7 +52,7 @@
 	background: $cardColor;
 	overflow: hidden;
 	border: 6px solid;
-	border-radius: 1.5rem;
+	border-radius: $radius;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
