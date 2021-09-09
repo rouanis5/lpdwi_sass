@@ -1,0 +1,40 @@
+$themes: ("whiteTheme", "blackTheme");
+$colors: (
+	white:(#fff,#d0ccc5),
+	primaryColorS:("255, 187, 236","114, 25, 70"),
+	mainCyanS: ("169, 201, 255","63, 93, 145"),
+	backgroundColor: (var(--white),#262a2b),
+	other: (#262a2b,var(--white)),
+	titleColor1S: ("255, 114, 185","185, 70, 128"),
+	paragraphColor: (#707070,var(--white)),
+	circleColor: (#ffefad,#c4a932),
+	cardColor: (var(--white),#363a3c40),
+	cardColor1: (#afc8fe,#b7c4dd),
+	cardColor2: (#18d0e9,#2fbdd0),
+	cardColor3: (#ffc730,#eabd43),
+	cardColor4: (#fda57a,#f0ac8a),
+	aboutusColor: (url(../images/img3.jpg),linear-gradient(13deg, #32196d66, #6b015ca1, #2151a566)),
+	formColor: (var(--white),#333333f5),
+	formFontColor: (unset,var(--white)),
+	contactBg: (#ffe4f1,"#331826 !important"),
+	svg: (url(../images/formW.svg),url(../images/formB.svg))
+);
+//creating css variables
+:root {
+        @each $color, $hex in $colors {
+            @if (length($hex) == 1) {
+				--#{"" +$color}: #{$hex};
+                --clr-#{$group}-#{"" + $color}: #{$hex};
+            }
+            @if (length($hex) == 2) {
+				--#{"" +$color}: #{nth($hex, 1)};
+            }
+        }
+}
+body.#{nth($themes,2)} {
+        @each $color, $hex in $colors {
+            @if (length($hex) == 2) {
+				--#{"" +$color}: #{nth($hex, 2)};
+            }
+        }
+}

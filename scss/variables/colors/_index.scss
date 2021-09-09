@@ -1,0 +1,28 @@
+@use "./colors" as *;
+$white: var(--white);
+$primaryColorS: var(--primaryColorS);
+$mainCyanS: var(--mainCyanS);
+$titleColor1S: var(--titleColor1S);
+$backgroundColor: var(--backgroundColor);
+$other: var(--other);
+$paragraphColor: var(--paragraphColor);
+$circleColor: var(--circleColor);
+$cardColor: var(--cardColor);
+$cardColor1: var(--cardColor1);
+$cardColor2: var(--cardColor2);
+$cardColor3: var(--cardColor3);
+$cardColor4: var(--cardColor4);
+$aboutusColor: var(--aboutusColor);
+$formColor: var(--formColor);
+$formFontColor: var(--formFontColor);
+$contactBg: var(--contactBg);
+$svg: var(--svg);
+
+$mainCyan: rgb(var(--mainCyanS));
+$primaryColor: rgb(var(--primaryColorS));
+$titleColor1: rgb(var(--titleColor1S));
+
+$titleColor2: $white;
+$paragraphColor1: $white;
+
+$cardColors: ($cardColor1, $cardColor2, $cardColor3, $cardColor4);
