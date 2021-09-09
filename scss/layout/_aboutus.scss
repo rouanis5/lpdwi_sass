@@ -60,7 +60,7 @@
 	box-shadow: 0px 3px 6px #00000029;
 	cursor: pointer;
 	user-select: none;
-	aspect-ratio: 26/35;
+	aspect-ratio: $crd-ratio;
 	width: 22%;
 	img {
 		@extend %circle;
@@ -100,9 +100,8 @@
 			transform: translateY(0)
 		}
 	}
-	$cardWidth: 196px;
 	@media (max-width: $lg){
-		width: $cardWidth;
+		@include aspect-ratio($cardWidth,$crd-ratio);
 	}
 	@media (max-width: $sm) {
 		margin-top: 31px;

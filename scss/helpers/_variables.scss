@@ -1,10 +1,12 @@
+@use "sass:math";
 $transitionTime: 0.7s ease-in;
 $trans: 0.7s;
 $h-popup: 68px;
 $radius: 1.5rem;
 $colorbarH: 5px;
 $p-header: 30px;
-
+$cardWidth: 196px;
+$crd-ratio: math.div(26,35);
 
 body {
 	&.blackTheme {

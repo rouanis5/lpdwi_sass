@@ -115,6 +115,20 @@
         min-height: $height;
     }
 }
+@mixin aspect-ratio($width: null, $ratio: 1,$useCssCalc: false) {
+    //Dont use numbers who had percentage !!!
+    @if ($width == null) {
+		@error $width + " / null width is unallowed";
+    } @else if ($ratio == null or $ratio == 0){
+		@error "null/zero ratio is unallowed";
+	} @else if($useCssCalc){
+		width: $width;
+		height:calc(#{$width} / #{$ratio});
+	} @else{	
+		width: $width;
+		height: math.div($width,$ratio);
+	}
+}
 @mixin mq($screen, $attr: min) {
     @if ($attr != max and $attr != min) {
         @error "#{$attr} not acceptable, use max or min";
