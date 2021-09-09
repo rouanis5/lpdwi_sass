@@ -117,11 +117,7 @@ function shortcutsDisplay() {
 }
 //change between themes and creating a local storage
 function changeTheme() {
-    if (document.body.classList.value == "whiteTheme") {
-        document.body.classList.value = "blackTheme";
-    } else {
-        document.body.classList.value = "whiteTheme";
-    }
+    document.body.classList.toggle("blackTheme");
     localStorage.setItem("themeSC21", document.body.classList.value);
 }
 if (theme) {
