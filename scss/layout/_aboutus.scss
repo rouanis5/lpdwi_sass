@@ -13,10 +13,8 @@
 	}
 	background: linear-gradient(13deg,#A88EE5,#FEA1F1,#336ED6);
 	background: $aboutusColor;
-    background-position: center;
-    background-repeat: no-repeat;
+	@extend %imgS;
 	background-attachment: fixed;
-    background-size: cover;
 	.title{
 		color: $titleColor2 !important;
 		padding-top: 42px;
@@ -48,31 +46,28 @@
 	}
 }
 .card {
-	transition: $transitionTime !important;
-	background: $cardColor;
-	overflow: hidden;
-	border: 6px solid;
-	border-radius: $radius;
 	@include flex(center){
 		flex-direction: column;
 	}
+	transition: $transitionTime !important;
+	background: $cardColor;
+	overflow: hidden;
+	border-bottom: $crd-border solid;
+	padding: $crd-border $crd-border 0;
 	text-align: center;
 	box-shadow: 0px 3px 6px #00000029;
+	z-index: 2;
 	cursor: pointer;
 	user-select: none;
 	aspect-ratio: $crd-ratio;
 	width: 22%;
 	img {
-		@extend %circle;
-		width: 120px;
-		height: 120px;
-		border: 12px solid;
-		background-size: cover;
+		border-radius: $radius;
+		@include size(120px);
+		border: $crd-border solid;
 		margin-top: 10px;
+		@extend %imgS;
 		transition: $transitionTime;
-		@media (max-width: $md){
-			border: 10px solid;
-		}
 	}
 	section {
 		@include cardTitle(h3, 33px, 800, $fs2, 22px);
@@ -93,8 +88,9 @@
 		}
 	}
 	&:hover{
-		border-color: $cardColor !important;
+		border-color: transparent !important;
 		transform: scale(1.1);
+		background: rgb(208 ,204 ,197, 22%);
 		z-index: 4;
 		.rs{
 			transform: translateY(0)

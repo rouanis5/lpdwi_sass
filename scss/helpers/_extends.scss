@@ -68,11 +68,12 @@ a {
         opacity: 1;
     }
 }
-%mygradient0{
-	@include myGradient(109deg,0%)
-}
 .flex {
 	@include flex;
+}
+
+%mygradient0{
+	@include myGradient(109deg,0%)
 }
 %parent,
 .parent {
@@ -95,6 +96,11 @@ a {
 }
 %center {
 	@include center;
+}
+%imgS{
+	background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 @each $screen,$width in $screens {
 	@include mq-container(#{$screen},#{$width});
