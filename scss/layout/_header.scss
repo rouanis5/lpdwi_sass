@@ -4,16 +4,18 @@ body.blackTheme header{
 header {
 	background: linear-gradient(13deg,#A88EE5,#FEA1F1,#336ED6);
 	overflow: hidden;
+	box-sizing: content-box;
+	padding: $p-header 0;
 	//height-------//
-	min-height: 545px;
-	height: calc(100vh - #{$h-white});
-	max-height: 730px;
+	min-height: 545px - $p-header;
+	height: calc(#{100vh - $h-white} - #{$p-header * 2});
+	max-height: 730px - $p-header;
 	//------------//
 	@include flex;
 	@media (max-width: $md){
-		min-height: 750px;
-        height: 98vh;
-		max-height: 900px;
+		min-height: 750px - $p-header;
+        height: calc(98vh - #{$p-header * 2});
+		max-height: 900px - $p-header;
 	}
 	.container {
 		z-index: 3;
