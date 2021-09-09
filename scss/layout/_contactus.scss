@@ -55,9 +55,9 @@ body.whiteTheme .contactUs::before{
 	}
 	.left {
 		@include flex(space-between,null,column);
-		height: 300px;
+		min-height: 316px;
 		@media (max-width: $md){
-			height: unset;
+			min-height: initial;
 		}
 		.title{
 			&::after {
@@ -105,30 +105,28 @@ body.whiteTheme .contactUs::before{
 				@media (max-width: $md) {
 					justify-content: space-around;
 				}
-				li {
-					list-style-type: none;
-					a {
-						position: relative;
-						cursor: pointer;
-						color: $titleColor1;
-						font-size: 25px;
-						display: inline-block;
-						width: 52px; 
-						height: 52px;
-						border: 2px $titleColor1 solid;
-						border-radius: 50%;
+			}
+			li {
+				list-style-type: none;
+				a {
+					position: relative;
+					cursor: pointer;
+					color: $titleColor1;
+					font-size: 25px;
+					display: inline-block;
+					width: 52px; 
+					height: 52px;
+					border: 2px $titleColor1 solid;
+					border-radius: 50%;
+					@include flex(center);
+					&:hover{
+						background: $titleColor1;
 						i{
-							@extend %center;
+							color: $white;
 						}
-						&:hover{
-							background: $titleColor1;
-							i{
-								color: $white;
-							}
-						}
-						&:active{
-							background: rgba($titleColor1S,0.5);
-						}
+					}
+					&:active{
+						background: rgba($titleColor1S,0.5);
 					}
 				}
 			}
