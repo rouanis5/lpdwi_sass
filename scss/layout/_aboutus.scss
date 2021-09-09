@@ -33,7 +33,7 @@
 	.main-content {
 		@include flex(space-between,null);
 		@media (max-width: $md) {
-			justify-content: space-around;
+			justify-content: space-around !important;
 			flex-wrap: wrap;
 			& >*{
 				margin-bottom: 26px;
