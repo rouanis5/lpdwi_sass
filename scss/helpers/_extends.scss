@@ -96,6 +96,11 @@ a {
 %center {
 	@include center;
 }
+%imgS{
+	background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 @each $screen,$width in $screens {
 	@include mq-container(#{$screen},#{$width});
 	@if ($screen == $sm) {

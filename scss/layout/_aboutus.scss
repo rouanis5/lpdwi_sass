@@ -1,3 +1,8 @@
+@use "sass:map";
+@use "sass:math";
+@function crdWidth($screen,$percentage : 100){
+	@return map.get($screens, $screen)*math.div($percentage,100);
+}
 .aboutUs {
 	position: relative;
 	width: 100%;
@@ -13,10 +18,8 @@
 	}
 	background: linear-gradient(13deg,#A88EE5,#FEA1F1,#336ED6);
 	background: $aboutusColor;
-    background-position: center;
-    background-repeat: no-repeat;
+	@extend %imgS;
 	background-attachment: fixed;
-    background-size: cover;
 	.title{
 		color: $titleColor2 !important;
 		padding-top: 42px;
@@ -33,7 +36,6 @@
 			justify-content: space-around;
 			flex-wrap: wrap;
 			& >*{
-				flex-basis: 196px;
 				margin-bottom: 26px;
 			}
 		}
@@ -41,7 +43,6 @@
 			flex-direction: column;
 			align-items: center;
 			& >*{
-				flex-basis:unset;
 				margin-bottom: unset;
 			}
 		}
@@ -51,7 +52,7 @@
 	transition: $transitionTime !important;
 	background: $cardColor;
 	overflow: hidden;
-	border: 6px solid;
+	border: $crd-border solid;
 	border-radius: $radius;
 	@include flex(center){
 		flex-direction: column;
@@ -60,18 +61,17 @@
 	box-shadow: 0px 3px 6px #00000029;
 	cursor: pointer;
 	user-select: none;
-	aspect-ratio: $crd-ratio;
-	width: 22%;
+	@include aspect-ratio(crdWidth($xl,25),$crd-ratio);
 	img {
+		@include size(120px);
 		@extend %circle;
-		width: 120px;
-		height: 120px;
-		border: 12px solid;
+		@extend %imgS;
+		border: $crd-border+3 solid;
 		background-size: cover;
 		margin-top: 10px;
 		transition: $transitionTime;
 		@media (max-width: $md){
-			border: 10px solid;
+			border: $crd-border solid;
 		}
 	}
 	section {
@@ -110,7 +110,6 @@
 		}
 	}
 	@media (max-width: $cardWidth + 30){
-		aspect-ratio: unset;
 		width: 90%;
 		min-height: 260px;
 	}
