@@ -1,0 +1,16 @@
+:root{
+	--cardfont: var(--fontsize2);
+	--footerfont: var(--fontsize2);
+	--fontsize1: 15.5px;
+	--fontsize2: 18px;
+	--fontsize3: 25px;
+	--fontsize4: 35px;
+	--fontsize5: 64px;
+	--fontsize6: 71px;
+}
+$fs1: var(--fontsize1);
+$fs2: var(--fontsize2);
+$fs3: var(--fontsize3);
+$fs4: var(--fontsize4);
+$fs5: var(--fontsize5);
+$fs6: var(--fontsize6);

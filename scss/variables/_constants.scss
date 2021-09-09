@@ -1,0 +1,25 @@
+@use "sass:math";
+//global
+$transitionTime: 0.7s ease-in;
+$trans: 0.7s;
+$radius: 1.5rem;
+
+//title
+$colorbarH: 5px;
+//header
+$p-header: 30px;
+//readMore
+$h-white: 7.83vh;
+//aboutUs
+$cardWidth: 196px;
+$crd-ratio: math.div(26,35);
+//popUp
+$h-popup: 68px;
+
+//screens and container widths
+$xl: 1366px;
+$lg: 1055px;
+$md: 799px;
+$sm: 576px;
+$screens: ($xl: 1014px, $lg:769px, $md:480px, $sm:352px);
+// $screens: ($xl: 1014px, $lg:789px, $md:480px, $sm:352px);

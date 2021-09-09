@@ -1,6 +1,14 @@
-@import './helpers/variables';
-@import './helpers/init';
+//variables
+@import './variables/colors';
+@import './variables/constants';
+@import './variables/fonts';
+
+//mixins
 @import './helpers/mixins';
+
+//initial
+@import './helpers/init';
+
 //components
 @import './components/scrollbar';
 @import './components/popup';
